@@ -1,4 +1,3 @@
-
 let servicetype 
 let frbr
 let rrbr 
@@ -62,10 +61,14 @@ document.getElementById("copybutton").onclick = function(){
     var text = document.getElementById('storyFinal');
     text.select();
     document.execCommand('copy');
+    alert("copied to clipboard");
 }  
 function midYear(){
     document.getElementById("storyFinal").value = "MIDYEAR SERVICE NO OIL CHANGE\nPERFORM BATTERY CHECK, OK\nTOPPED OFF FLUIDS, ADDED KREX\nROTATED TIRES, SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
 function oilChange(){
     document.getElementById("storyFinal").value = "PERFORM " + servicetype + "K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+}
+document.getElementById("spencerbutton").onclick = function(){
+    document.getElementById("spencerimg").toggleAttribute("hidden");
 }
