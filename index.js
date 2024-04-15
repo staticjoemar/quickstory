@@ -95,8 +95,8 @@ document.getElementById("rearbrakebutton").onclick = function (){
 document.getElementById("frontandrearbrakebutton").onclick = function (){
     document.getElementById("storyFinal").value = "MACHINED FRONT AND REAR ROTORS\nREPLACED ALL PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK" 
 }
-document.getElementById("clearfieldsbutton").onclick = function (){
-    document.getElementById("serviceinput").value = " ";
+document.getElementById("clearfieldsbutton").onclick = function(){
+    document.getElementById("serviceinput").value = "5";
     document.getElementById("frbrinput").value = " ";
     document.getElementById("rrbrinput").value = " ";
     document.getElementById("trfr").value = " ";
