@@ -95,3 +95,14 @@ document.getElementById("rearbrakebutton").onclick = function (){
 document.getElementById("frontandrearbrakebutton").onclick = function (){
     document.getElementById("storyFinal").value = "MACHINED FRONT AND REAR ROTORS\nREPLACED ALL PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK" 
 }
+document.getElementById("clearfieldsbutton").onclick = function (){
+    servicetype = document.getElementById("serviceinput").value = " ";
+    frbr = document.getElementById("frbrinput").value = " ";
+    rrbr = document.getElementById("rrbrinput").value = " ";
+    trfr = document.getElementById("trfr").value = " ";
+    trrr = document.getElementById("trrr").value = " ";
+    filtertype = document.getElementById("filterinput").value = " ";
+    oiltype = document.getElementById("oiltypeinput").value = " ";
+    oilqt = document.getElementById("oilqtinput").value = " ";
+}
+    
