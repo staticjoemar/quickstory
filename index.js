@@ -97,12 +97,12 @@ document.getElementById("frontandrearbrakebutton").onclick = function (){
 }
 document.getElementById("clearfieldsbutton").onclick = function (){
     servicetype = document.getElementById("serviceinput").value = " ";
-    frbr = document.getElementById("frbrinput").value = " ";
-    rrbr = document.getElementById("rrbrinput").value = " ";
-    trfr = document.getElementById("trfr").value = " ";
-    trrr = document.getElementById("trrr").value = " ";
-    filtertype = document.getElementById("filterinput").value = " ";
-    oiltype = document.getElementById("oiltypeinput").value = " ";
-    oilqt = document.getElementById("oilqtinput").value = " ";
+    document.getElementById("frbrinput").value = " ";
+    document.getElementById("rrbrinput").value = " ";
+    document.getElementById("trfr").value = " ";
+   document.getElementById("trrr").value = " ";
+    document.getElementById("filterinput").value = " ";
+    document.getElementById("oiltypeinput").value = " ";
+    document.getElementById("oilqtinput").value = " ";
 }
     
