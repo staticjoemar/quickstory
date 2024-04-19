@@ -1,4 +1,8 @@
 
+
+
+
+
 let servicetype 
 let frbr
 let rrbr 
@@ -105,14 +109,15 @@ function sixtyK(){
 document.getElementById("spencerbutton").onclick = function(){
     document.getElementById("spencerimg").toggleAttribute("hidden");
 }
-document.getElementById("frontbrakebutton").onclick = function (){
-    document.getElementById("storyFinal").value = "MACHINED FRONT ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND BURNISH BRAKES, OK"
-}
-document.getElementById("rearbrakebutton").onclick = function (){
-    document.getElementById("storyFinal").value = "MACHINED REAR ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK" 
-}
-document.getElementById("frontandrearbrakebutton").onclick = function (){
-    document.getElementById("storyFinal").value = "MACHINED FRONT AND REAR ROTORS\nREPLACED ALL PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK" 
-}
+document.getElementById("clearbutton").onclick = function(){
+    document.getElementById("serviceinput").value = " ";
+   document.getElementById("frbrinput").value = " ";
+   document.getElementById("rrbrinput").value = " ";
+    document.getElementById("trfr").value = " ";
+    document.getElementById("trrr").value = " ";
+    document.getElementById("filterinput").value = " ";
+    document.getElementById("oiltypeinput").value = " ";
+    document.getElementById("oilqtinput").value = " ";
 
+}
 
