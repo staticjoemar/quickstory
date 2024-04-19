@@ -1,3 +1,4 @@
+
 let servicetype 
 let frbr
 let rrbr 
@@ -9,6 +10,21 @@ let filtertype
 let midcheckbox = document.getElementById("midyearcheckbox");
 let sixtykcheckbox = document.getElementById("60kcheckbox");
 let spcheckbox = document.getElementById("spcheckbox");
+
+
+
+document.addEventListener('keypress', function(e) { 
+    if (e.keyCode === 13) {
+        document.getElementById("copybutton").click();
+
+    }});  
+
+    document.addEventListener('keypress', function(e){ 
+        if (e.keyCode == 32) {
+            document.getElementById("insertbutton").click();
+    
+        }});
+
 document.getElementById("530btn").onclick = function(){
     document.getElementById("oiltypeinput").value = "5W30";
 }
@@ -36,6 +52,9 @@ document.getElementById("a6btn").onclick = function(){
 document.getElementById("n1btn").onclick = function(){
     document.getElementById("filterinput").value = "N1";
 }
+document.getElementById("d1btn").onclick = function(){
+    document.getElementById("filterinput").value = "D1";
+}
 document.getElementById("d3btn").onclick = function(){
     document.getElementById("filterinput").value = "D3";
 }
@@ -49,6 +68,7 @@ function getInputValues(){
     oiltype = document.getElementById("oiltypeinput").value;
     oilqt = document.getElementById("oilqtinput").value;
 }
+
 document.getElementById("insertbutton").onclick = function()
 {
     getInputValues();
@@ -69,19 +89,18 @@ document.getElementById("copybutton").onclick = function(){
     var text = document.getElementById('storyFinal');
     text.select();
     document.execCommand('copy');
-    alert("copied to clipboard");
 }  
 function midYear(){
-    document.getElementById("storyFinal").value = "MIDYEAR SERVICE NO OIL CHANGE\nPERFORM BATTERY CHECK, OK\nTOPPED OFF FLUIDS, ADDED KREX\nROTATED TIRES, SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+    document.getElementById("storyFinal").value = "MIDYEAR SERVICE NO OIL CHANGE\nPERFORM BATTERY CHECK, OK\nTOPPED OFF FLUIDS, ADDED KREX\nROTATED TIRES, SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
 function oilChange(){
-    document.getElementById("storyFinal").value = "PERFORM " + servicetype + "K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+    document.getElementById("storyFinal").value = "PERFORM " + servicetype + "K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
 function sparkPlugs(){
-    document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ALL SPARK PLUGS. TORQUED TO SPEC\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+    document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ALL SPARK PLUGS. TORQUED TO SPEC\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
 function sixtyK(){
-    document.getElementById("storyFinal").value = "PERFORM " + servicetype + "K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ENGINE AIR FILTER\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nDRAIN AND REFILL ATF\nDRAIN AND FILL COOLANT, BLEED COOLING SYSTEM\nREPLACE GEAR OIL, ADD EFI\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+    document.getElementById("storyFinal").value = "PERFORM " + servicetype + "K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ENGINE AIR FILTER\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nDRAIN AND REFILL ATF\nDRAIN AND FILL COOLANT, BLEED COOLING SYSTEM\nREPLACE GEAR OIL, ADD EFI\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
 document.getElementById("spencerbutton").onclick = function(){
     document.getElementById("spencerimg").toggleAttribute("hidden");
@@ -95,14 +114,5 @@ document.getElementById("rearbrakebutton").onclick = function (){
 document.getElementById("frontandrearbrakebutton").onclick = function (){
     document.getElementById("storyFinal").value = "MACHINED FRONT AND REAR ROTORS\nREPLACED ALL PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK" 
 }
-document.getElementById("clearfieldsbutton").onclick = function(){
-    document.getElementById("serviceinput").value = " ";
-    document.getElementById("frbrinput").value = " ";
-    document.getElementById("rrbrinput").value = " ";
-    document.getElementById("trfr").value = " ";
-   document.getElementById("trrr").value = " ";
-    document.getElementById("filterinput").value = " ";
-    document.getElementById("oiltypeinput").value = " ";
-    document.getElementById("oilqtinput").value = " ";
-}
-    
+
+
