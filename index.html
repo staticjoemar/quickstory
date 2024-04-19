@@ -1,5 +1,8 @@
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +15,15 @@
     </style>   
 </head>
 <body>
-    <h1></h1>   
-    <p style="background-color: black; color: black;">.</p><br>
-    <input type="checkbox" id="midyearcheckbox"><span>MIDYEAR</span><br><br>
-    <input type="checkbox" id="60kcheckbox"><span>30/60/90K(REPLACE ATF,COOLANT,GEAR OIL)</span><br><br>
-    <input type="checkbox" id="spcheckbox"><span>5KSP</span><br><br>
-    <button id="frontbrakebutton">FRONT BRAKES</button><span> </span><button id="rearbrakebutton">REAR BRAKES</button><span> </span><button id="frontandrearbrakebutton">FRONT AND REAR BRAKES</button>
+    
+    <a href="other.html"><button  style="height: 30px; width: 80px; border-radius: 10px;">repairs</button></a><a href="recall.html"><button style="height: 30px; width: 80px; border-radius: 10px;">recalls</button></a>
+    <h1>SERVICES</h1>   
+    <p style="background-color: black; color: black;">.</p>
+    <input type="checkbox" id="midyearcheckbox"><span>MIDYEAR</span><br>
+    <input type="checkbox" id="60kcheckbox"><span>30/60/90K(REPLACE ATF,COOLANT,GEAR OIL)</span><br>
+    <input type="checkbox" id="spcheckbox"><span>5KSP</span><br>
+    <button id="530btn">5W30</button><button id="520btn">5W20</button><button id="020btn">0W20</button><button id="016btn">0W16</button><br>
+    <button id="a1btn">A1</button><button id="a4btn">A4</button><button id="a5btn">A5</button><button id="a6btn">A6</button><button id="n1btn">N1</button><button id="d1btn">D1</button><button id="d3btn">D3</button><br>
     <p style="background-color: black; color: black;">.</p> 
     <label for="--k">SERVICE TYPE</label>
     <input type="text" id="serviceinput"  name="--k" style="width: 20px;"><span> K</span><br>
@@ -30,12 +36,13 @@
     <label for="tiresrr">REAR TIRES</label>
     <input type="text" name= "tiresrr" id="trrr" style="width: 20px;"><span> /32</span><br>
     <label for="oiltype">OIL TYPE</label> 
-    <input type="text"  id="oiltypeinput" name="oiltype" style="width: 40px;"> <button id="530btn">5W30</button><button id="520btn">5W20</button><button id="020btn">0W20</button><button id="016btn">0W16</button><br>
+    <input type="text"  id="oiltypeinput" name="oiltype" style="width: 40px;"><br>
     <label for="filter">OIL FILTER</label>
-    <input type="text" name="filter" id="filterinput" style="width: 20px;"><button id="a1btn">A1</button><button id="a4btn">A4</button><button id="a5btn">A5</button><button id="a6btn">A6</button><button id="n1btn">N1</button><button id="d1btn">D1</button><button id="d3btn">D3</button><br>
+    <input type="text" name="filter" id="filterinput" style="width: 20px;"><br>
     <label for="oilqt">OIL AMOUNT</label>
     <input type="text" id="oilqtinput"  name="oilqt" style="width: 20px;"><span> QT</span><br><br>
     <button id="insertbutton">insert</button>  
+    <button id="clearbutton">clear</button>
     <p style="background-color: black; color: black;">.</p> 
     <textarea name="" id="storyFinal" cols="30" rows="10">
     </textarea><br>
@@ -44,5 +51,7 @@
     <p>notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
     <button id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">
     <script src="index.js"></script>
+
+
 </body>
 </html>
