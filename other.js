@@ -1,3 +1,4 @@
+
 let onetire = document.getElementById("1tire");
 let twotire = document.getElementById("2tire");
 let threetire = document.getElementById("3tire");
@@ -17,11 +18,6 @@ document.addEventListener('keypress', function(e) {
         }});
 
 
-document.getElementById("insertbutton").onclick = function()
-{
-
-    
-}
 document.getElementById("copybutton").onclick = function(){
     var text = document.getElementById('storyFinal');
     text.select();
@@ -52,9 +48,5 @@ document.getElementById("mountandbalancebutton").onclick = function(){
     else if(fourtire.checked == true){
         document.getElementById("storyFinal").value = "MOUNT AND BALANCE FOUR TIRES\nSET TO 35 PSI\nTORQUED ALL LUG NTUS TO 80 FT LBS"
     }
-    else{
-    document.getElementById("storyFinal").value = "MOUNT AND BALANCE FOUR TIRES\nSET TO 35 PSI\nTORQUED ALL LUG NTUS TO 80 FT LBS"
-}}
-
-
-
+   
+}
