@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickStory</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <a href="service.html"><button class="headerbutton">services</button></a>
+    <a href="repair.html"><button class="headerbutton">repairs</button></a>
+    <a href="recall.html"><button  class="headerbutton">recalls</button></a>    
+    <h1 class="pagetitle">REPAIRS</h1>
+    <p class="pagedivider">.</p>
+
+    <div>
+        <textarea name="" id="storyFinal" cols="60" rows="10" style="border: 2px solid; border-color: black;">
+        </textarea><br>
+        <button class="button" id="copybutton">COPY</button>
+        <button class="button" id="finalstoryclearbutton">CLEAR</button>
+    </div>   
+    <p class="dividertitle"><button class="dividerbtn" id="brakesbtn"> BRAKES </button></p>
+        <div id="brakes" hidden>
+            <p class="subdividertitle">PADS/ROTORS</p>
+                    <label class="label" for="rotors">REPLACED ROTORS</label>
+                    <input type="checkbox" id="replacerotorscheckbox" name="rotors"><br><br>
+                    <button class="button" id="frontbrakebutton">FRONT BRAKES</button><span> </span>
+                    <button class="button" id="rearbrakebutton">REAR BRAKES</button><span> </span>
+                    <button class="button" id="frontandrearbrakebutton">FRONT AND REAR BRAKES</button>
+            <p class="subdividertitle">BOOSTER</p>
+                    <button class="button" id="replaceboosterbtn">REPLACE BRAKE BOOSTER</button>
+            <p class="subdividertitle">MASTER CYLINDER</p>
+                    <button class="button" id="replacemasterbtn">REPLACE MASTER CYLINDER</button>
+        </div>
+    <p class="dividertitle"><button class="dividerbtn" id="steeringbtn">STEERING/SUSPENSION</button></p>
+        <div id="steeringsuspension" hidden>
+            <p class="subdividertitle">TIRES</p>
+                    <label class="label" for="onetire">1:</label>
+                        <input type="checkbox" id="1tire" name="onetire">
+                    <label class="label" for="twotires">2:</label>
+                        <input type="checkbox" id="2tire" name="twotires">
+                    <label class="label" for="threetires">3:</label>
+                        <input type="checkbox" id="3tire" name="threetires">
+                    <label class="label" for="fourtires">4:</label>
+                        <input type="checkbox" id="4tire" name="fourtires">
+                    <button class="button" id="mountandbalancebutton">MOUNT AND BALANCE</button>
+            <p class="subdividertitle">CV AXLE/BOOT</p>
+                    <label class="label" for="lhboot">LH:</label>
+                        <input type="checkbox" id="lhboot" name="lhboot">
+                    <label class="label" for="rhboot">RH:</label>
+                        <input type="checkbox" id="rhboot" name="rhboot"> 
+                    <button class="button" id="innerouterbtn">REPLACE INNER AND OUTER BOOT(S)</button> 
+                    <button class="button" id="innerbtn" >REPLACE INNER BOOT(S)</button> 
+            <p class="subdividertitle">POWER STEERING(INOP)</p>
+                    <button class="button">REPLACE STEERING RACK</button>
+                    <button class="button">REPLACE P/S PUMP</button>
+                    <button class="button">REPLACE P/S LINES</button>
+            <p class="subdividertitle">SUSPENSION(INOP)</p>
+                    <label class="label" for="lfsuspension">LF:</label>
+                        <input type="checkbox" name="lfsuspension" id="">
+                    <label class="label" for="rfsuspension">RF:</label>
+                        <input type="checkbox" name="rfsuspension" id=""><br><br><br>
+                    <label class="label" for="lrsuspension">LR:</label>
+                        <input type="checkbox" name="lrsuspension" id="">
+                    <label class="label" for="rrsuspension">RR:</label>
+                        <input type="checkbox" name="rrsuspension" id=""><br><br><br>
+                    <button class="button" >REPLACE SHOCK(S)</button>
+                    <button class="button" >REPLACE ENDLINK(S)</button>
+                    <button class="button" >REPLACE STRUT ASSY(S)</button>          
+            <p class="subdividertitle">WHEEL BEARINGS(INOP)</p>
+                    <label class="label" for="lfbearing">LF:</label>
+                        <input type="checkbox" name="lfbearing" id="">
+                    <label class="label" for="rfbearing">RF:</label>
+                        <input type="checkbox" name="rfbearing" id=""><br><br><br>
+                    <label class="label" for="lrbearing">LR:</label>
+                        <input type="checkbox" name="lrbearing" id="">
+                    <label class="label" for="rrbearing">RR:</label>
+                        <input type="checkbox" name="rrbearing" id=""><br><br><br>
+                    <button class="button" >REPLACE BEARING (ASSY)</button> 
+                    <button class="button" >REPLACE BEARING (PRESS)</button>    
+            <p class="subdividertitle">U-JOINT/DRIVESHAFT(INOP)</p>
+                    <button class="button">REPLACE UJOINTS</button>
+        </div>
+        <p class="dividertitle"><button class="dividerbtn" id="enginebtn">ENGINE(INOP)</button></p>
+            <div id="engine" hidden>
+                <p class="subdividertitle">WHY TF YOU OPEN THIS IT SAYS INOP</p>
+                <p class="subdividertitle">(inop)</p>
+                <p class="subdividertitle">(inop)</p>
+                <p class="subdividertitle">(inop)</p>
+            </div>
+        <p class="dividertitle"><button class="dividerbtn" id="acbtn">A/C(INOP)</button></p>
+            <div id="ac"  hidden>
+                <p class="subdividertitle">DUMBASS</p>
+                <p class="subdividertitle">(inop)</p>
+                <p class="subdividertitle">(inop)</p>
+                <p class="subdividertitle">(inop)</p>
+            </div>
+        <p class="dividertitle"><button class="dividerbtn" id="elecbtn">ELECTRICAL(INOP)</button></p>
+            <div id="electrical"  hidden>
+                <p class="subdividertitle">NULL</p>
+                <p class="subdividertitle">NULL</p>
+                <p class="subdividertitle">NULL</p>
+                <p class="subdividertitle">NULL</p>
+            </div>
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+   
+   
+
+
+    <p class="pagedivider">.</p>
+    <p>notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
+    <button id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">
+    <script src="repair.js"></script>
+</body>
+</html>

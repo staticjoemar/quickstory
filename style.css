@@ -1,0 +1,61 @@
+
+
+body{
+    background-color: darkgray;
+}
+.headerbutton{
+    height: 30px;
+     width: 80px;
+      border-radius: 10px;
+      font-family: monospace;
+      background-color: darkslategray;
+      color: white;
+}
+.divider{
+    background-color: black; 
+    color: black;
+     height: 5px;
+      width: 300px;
+}
+.label{
+    font-family: monospace; 
+    font-size: 16px;
+}
+.button{
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.textfield{
+    font-family: monospace;
+}
+.dividertitle{
+    background-color: black; 
+    color: white; 
+    height: 30px; 
+    font-family: monospace;
+     font-size: 24px;
+}
+.subdividertitle{
+    background-color: darkslategray; 
+    color: white; 
+    height: 30px; 
+    font-family: monospace;
+     font-size: 21px; 
+}
+.pagetitle{
+    font-family: monospace; font-size: 50px;
+}
+.pagedivider{
+    background-color: darkslategray; 
+    color: darkslategray;
+}
+.dividerbtn{
+    background-color: transparent; 
+    color: white; 
+    font-family: monospace;
+     font-size: 24px;
+      border-color: transparent;
+       text-decoration: underline; 
+    cursor: pointer;
+}
