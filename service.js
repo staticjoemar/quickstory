@@ -38,13 +38,14 @@ document.getElementById("clearbutton").onclick = function(){
     spchbx.checked=false;
 }
 //keyboard shorcuts for insert and copy
-document.addEventListener('keypress', function(e) { 
-    if (e.keyCode === 13) {
+document.addEventListener('keydown', function(e) { 
+    if (e.key == "Control") {
         document.getElementById("copybutton").click();
 }});  
-document.addEventListener('keypress', function(e){ 
-    if (e.keyCode == 32) {
+document.addEventListener('keydown', function(e){ 
+    if (e.key == " ") {
         document.getElementById("insertbutton").click();  
+       
 }});
 //oil filter and oil type buttons set text field values        
 document.getElementById("530btn").onclick = function(){
@@ -320,14 +321,11 @@ document.getElementById("factorymenubutton").onclick=function(){
     if(factoryMenuHidden.style.display==="none"){
         closeDivs();
         factoryMenuHidden.style.display="inline-block";
-        document.getElementById("factorymenubutton").style.backgroundColor="green";
-        document.getElementById("bgbutton").style.backgroundColor="black";
-        document.getElementById("miscbtn").style.backgroundColor="black";
     }
     else if(factoryMenuHidden.style.display==="inline-block"){
         factoryMenuHidden.style.display="none";
     }
-    else if(document.getElementById("factorymenubutton").style.backgroundColor=="black"){
+     if(document.getElementById("factorymenubutton").style.backgroundColor=="black"){
         document.getElementById("factorymenubutton").style.backgroundColor="green";
             document.getElementById("miscbtn").style.backgroundColor="black";
             document.getElementById("bgbutton").style.backgroundColor="black";
