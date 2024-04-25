@@ -78,6 +78,12 @@ document.getElementById("spencerbutton").onclick = function(){
                 document.getElementById("storyFinal").value = "MOUNT AND BALANCE FOUR TIRES\nSET TO 35 PSI\nTORQUED ALL LUG NUTS TO 80 FT LBS";
             }
         }
+        document.getElementById("frAlignBtn").onclick=function(){
+            document.getElementById("storyFinal").value = "ALIGN FRONT SUSPENSION\nADJUST ANGLES TO SPEC\nROAD TEST, OK\nVEHICLE TRACKING STRAIGHT";
+        }
+        document.getElementById("AlignBtn").onclick=function(){
+            document.getElementById("storyFinal").value = "ALIGN FRONT AND REAR SUSPENSION\nADJUST ANGLES TO SPEC\nROAD TEST, OK\nVEHICLE TRACKING STRAIGHT";
+        }
     //CV axle autofills  
         document.getElementById("innerouterbtn").onclick=function(){
             if(lhcvchbx.checked==true){
@@ -101,24 +107,264 @@ document.getElementById("spencerbutton").onclick = function(){
                 document.getElementById("storyFinal").value= "REMOVE BOTH FRONT AXLES\nDISSASEMBLE BOTH FRONT CV AXLES\nREPLACE BOTH FRONT INNER CV BOOTS\nAPPLY NEW GREASE, CLAMPS, AND REPLACE AXLE NUTS\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION";
             }
         }
+        document.getElementById("replaceShaft").onclick=function(){
+            if(lhcvchbx.checked==true){
+                document.getElementById("storyFinal").value= "REPLACED LH CV AXLE ASSY\nREPLACED AXLE NUT\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION, OK";
+            }
+            if(rhcvchbx.checked==true){
+                document.getElementById("storyFinal").value= "REPLACED RH CV AXLE ASSY\nREPLACED AXLE NUT\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION, OK";
+            }
+            if(lhcvchbx.checked==true&&rhcvchbx.checked==true){
+                document.getElementById("storyFinal").value= "REPLACED BOTH FRONT CV AXLE ASSY\nREPLACED AXLE NUTS\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION, OK";
+            }
+        }
     //steering rack
-    
-        
-//expand categories
-document.getElementById("brakesbtn").onclick=function(){
-    document.getElementById("brakes").toggleAttribute("hidden");
-}
-document.getElementById("steeringbtn").onclick=function(){
-    document.getElementById("steeringsuspension").toggleAttribute("hidden");
-}
-document.getElementById("enginebtn").onclick=function(){
-    document.getElementById("engine").toggleAttribute("hidden");
-}
-document.getElementById("acbtn").onclick=function(){
-    document.getElementById("ac").toggleAttribute("hidden");
-}
-document.getElementById("elecbtn").onclick=function(){
-    document.getElementById("electrical").toggleAttribute("hidden");
-}
+        document.getElementById("steeringrackbtn").onclick=function(){
+            document.getElementById("storyFinal").value= "LOCK STEERING WHEEL\nDISCONNECT P/S LINES AND DRAIN FLUID\nDISCONNECT INTERMEDIATE SHAFT\nDISCONNECT BOTH OUTER TIE ROD ENDS\nREMOVE AND REPLACE STEERING RACK\nCENTER NEW PART\nREINSTALL TIE ROD ENDS AND REPLACE COTTER PINS\nREINSTALL P/S LINES\nREINSTALL INTERMEDIATE SHAFT\nFILL AND BLEED SYSTEM\nALIGN FRONT SUSPENSION AND ROAD TEST, OK";
+        }
+        document.getElementById("pspumpbtn").onclick=function(){
+            document.getElementById("storyFinal").value= "DRAIN P/S FLUID\nREMOVE DRIVE BELT\nREMOVE AND REPLACE P/S PUMP\nREINSTALL DRIVE BELT\nFILL AND BLEED P/S SYSTEM\nCHECK OPERATION, OK";
+        }
+        document.getElementById("pslinebtn").onclick=function(){
+            document.getElementById("storyFinal").value= "REMOVE P/S LINE\nFILL AND BLEED P/S SYSTEM\nCHECK FOR LEAKS, OK";
+        }
+//menu change color
+let hdrBtn1=document.getElementById("hdrBtn1");
+let hdrBtn2=document.getElementById("hdrBtn2");
+let hdrBtn3=document.getElementById("hdrBtn3");
+let hdrBtn4=document.getElementById("hdrBtn4");
+let hdrBtn5=document.getElementById("hdrBtn5");
+let hdrBtn6=document.getElementById("hdrBtn6");
 
 
+//Open Menus
+document.getElementById("hdrBtn1").onclick=function(){
+    document.getElementById("menu1").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn1.style.backgroundColor=="black"){
+        hdrBtn1.style.backgroundColor="green";
+        hdrBtn2.style.backgroundColor="black";
+        hdrBtn3.style.backgroundColor="black";
+        hdrBtn4.style.backgroundColor="black";
+        hdrBtn5.style.backgroundColor="black";
+        hdrBtn6.style.backgroundColor="black";
+    }
+    else if(hdrBtn1.style.backgroundColor=="green"){
+        hdrBtn1.style.backgroundColor="black";
+    }
+    document.getElementById("menu2").setAttribute("hidden","hidden");
+    document.getElementById("menu3").setAttribute("hidden","hidden");
+    document.getElementById("menu4").setAttribute("hidden","hidden");
+    document.getElementById("menu5").setAttribute("hidden","hidden");
+    document.getElementById("menu6").setAttribute("hidden","hidden");
+
+}
+document.getElementById("hdrBtn2").onclick=function(){
+    document.getElementById("menu2").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn2.style.backgroundColor=="black"){
+        hdrBtn2.style.backgroundColor="green";
+        hdrBtn1.style.backgroundColor="black";
+        hdrBtn3.style.backgroundColor="black";
+        hdrBtn4.style.backgroundColor="black";
+        hdrBtn5.style.backgroundColor="black";
+        hdrBtn6.style.backgroundColor="black";
+    }
+    else if(hdrBtn2.style.backgroundColor=="green"){
+        hdrBtn2.style.backgroundColor="black";
+    }
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    document.getElementById("menu3").setAttribute("hidden","hidden");
+    document.getElementById("menu4").setAttribute("hidden","hidden");
+    document.getElementById("menu5").setAttribute("hidden","hidden");
+    document.getElementById("menu6").setAttribute("hidden","hidden");
+
+}
+document.getElementById("hdrBtn3").onclick=function(){
+    document.getElementById("menu3").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn3.style.backgroundColor=="black"){
+        hdrBtn3.style.backgroundColor="green";
+        hdrBtn2.style.backgroundColor="black";
+        hdrBtn1.style.backgroundColor="black";
+        hdrBtn4.style.backgroundColor="black";
+        hdrBtn5.style.backgroundColor="black";
+        hdrBtn6.style.backgroundColor="black";
+    }
+    else if(hdrBtn3.style.backgroundColor=="green"){
+        hdrBtn3.style.backgroundColor="black";
+    }
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    document.getElementById("menu2").setAttribute("hidden","hidden");
+    document.getElementById("menu4").setAttribute("hidden","hidden");
+    document.getElementById("menu5").setAttribute("hidden","hidden");
+    document.getElementById("menu6").setAttribute("hidden","hidden");
+
+}
+document.getElementById("hdrBtn4").onclick=function(){
+    document.getElementById("menu4").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn4.style.backgroundColor=="black"){
+        hdrBtn4.style.backgroundColor="green";
+        hdrBtn2.style.backgroundColor="black";
+        hdrBtn3.style.backgroundColor="black";
+        hdrBtn1.style.backgroundColor="black";
+        hdrBtn5.style.backgroundColor="black";
+        hdrBtn6.style.backgroundColor="black";
+    }
+    else if(hdrBtn4.style.backgroundColor=="green"){
+        hdrBtn4.style.backgroundColor="black";
+    }
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    document.getElementById("menu2").setAttribute("hidden","hidden");
+    document.getElementById("menu3").setAttribute("hidden","hidden");
+    document.getElementById("menu5").setAttribute("hidden","hidden"); 
+    document.getElementById("menu6").setAttribute("hidden","hidden");
+   
+}
+document.getElementById("hdrBtn5").onclick=function(){
+    document.getElementById("menu5").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn5.style.backgroundColor=="black"){
+        hdrBtn5.style.backgroundColor="green";
+        hdrBtn2.style.backgroundColor="black";
+        hdrBtn3.style.backgroundColor="black";
+        hdrBtn4.style.backgroundColor="black";
+        hdrBtn1.style.backgroundColor="black";
+        hdrBtn6.style.backgroundColor="black";
+    }
+    else if(hdrBtn5.style.backgroundColor=="green"){
+        hdrBtn5.style.backgroundColor="black";
+    }
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    document.getElementById("menu2").setAttribute("hidden","hidden");
+    document.getElementById("menu3").setAttribute("hidden","hidden");
+    document.getElementById("menu4").setAttribute("hidden","hidden");
+    document.getElementById("menu6").setAttribute("hidden","hidden");
+
+}
+document.getElementById("hdrBtn6").onclick=function(){
+    document.getElementById("menu6").toggleAttribute("hidden");
+    closeDivs();
+    if(hdrBtn6.style.backgroundColor=="black"){
+        hdrBtn6.style.backgroundColor="green";
+        hdrBtn2.style.backgroundColor="black";
+        hdrBtn3.style.backgroundColor="black";
+        hdrBtn4.style.backgroundColor="black";
+        hdrBtn5.style.backgroundColor="black";
+        hdrBtn1.style.backgroundColor="black";
+    }
+    else if(hdrBtn1.style.backgroundColor=="green"){
+        hdrBtn1.style.backgroundColor="black";
+    }
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    document.getElementById("menu2").setAttribute("hidden","hidden");
+    document.getElementById("menu3").setAttribute("hidden","hidden");
+    document.getElementById("menu4").setAttribute("hidden","hidden");
+    document.getElementById("menu5").setAttribute("hidden","hidden");
+
+}
+//Declare hidden items
+let brkDiv1 = document.getElementById("brkDiv1");
+let brkDiv2 = document.getElementById("brkDiv2");
+let brkDiv3 = document.getElementById("brkDiv3");
+let sSDiv1 = document.getElementById("sSDiv1");
+let sSDiv2 = document.getElementById("sSDiv2");  
+let sSDiv3 = document.getElementById("sSDiv3");  
+let sSDiv4 = document.getElementById("sSDiv4");  
+let sSDiv5 = document.getElementById("sSDiv5");  
+let sSDiv6 = document.getElementById("sSDiv6");      
+//Menu Btns show Divs
+    //BRAKES
+        document.getElementById("brkDiv1Btn").onclick=function(){
+            closeDivs();
+            if(brkDiv1.style.display==="none"){
+                brkDiv1.style.display="inline-block";
+            }
+            else if(brkDiv1.style.display==="inline-block"){
+                brkDiv1.style.display="none";
+            }}
+        document.getElementById("brkDiv2Btn").onclick=function(){
+            closeDivs();
+            if(brkDiv2.style.display==="none"){
+                brkDiv2.style.display="inline-block";
+            }
+            else if(brkDiv2.style.display==="inline-block"){
+                brkDiv2.style.display="none";
+            }}
+        document.getElementById("brkDiv3Btn").onclick=function(){
+            closeDivs();
+            if(brkDiv3.style.display==="none"){
+                brkDiv3.style.display="inline-block";
+            }
+            else if(brkDiv3.style.display==="inline-block"){
+                brkDiv3.style.display="none";
+            }}
+    //STEERING AND SUSPENSION
+        document.getElementById("sSDiv1Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv1.style.display==="none"){
+                sSDiv1.style.display="inline-block";
+            }
+            else if(sSDiv1.style.display==="inline-block"){
+                sSDiv1.style.display="none";
+            }}
+        document.getElementById("sSDiv2Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv2.style.display==="none"){
+                sSDiv2.style.display="inline-block";
+            }
+            else if(sSDiv2.style.display==="inline-block"){
+                sSDiv2.style.display="none";
+            }}
+        document.getElementById("sSDiv3Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv3.style.display==="none"){
+                sSDiv3.style.display="inline-block";
+            }
+            else if(sSDiv3.style.display==="inline-block"){
+                sSDiv3.style.display="none";
+            }}
+        document.getElementById("sSDiv4Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv4.style.display==="none"){
+                sSDiv4.style.display="inline-block";
+            }
+            else if(sSDiv4.style.display==="inline-block"){
+                sSDiv4.style.display="none";
+            }}
+        document.getElementById("sSDiv5Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv5.style.display==="none"){
+                sSDiv5.style.display="inline-block";
+            }
+            else if(sSDiv5.style.display==="inline-block"){
+                sSDiv5.style.display="none";
+            }}
+        document.getElementById("sSDiv6Btn").onclick=function(){
+            closeDivs();
+            if(sSDiv6.style.display==="none"){
+                sSDiv6.style.display="inline-block";
+            }
+            else if(sSDiv6.style.display==="inline-block"){
+                sSDiv6.style.display="none";
+            }}
+    //ENGINES
+    //AC
+    //ELECTRICAL    
+function closeDivs(){
+    sSDiv1.style.display="none";
+    sSDiv2.style.display="none";
+    sSDiv3.style.display="none";
+    sSDiv4.style.display="none";
+    sSDiv5.style.display="none";
+    sSDiv6.style.display="none";
+    brkDiv1.style.display="none";
+    brkDiv2.style.display="none";
+    brkDiv3.style.display="none";
+}
+
+//menu change color
+function menuColor(){
+
+}

@@ -15,7 +15,10 @@ let spchbx = document.getElementById("spcheckbox");
 let efichbx = document.getElementById("eficheckbox");
 let acfchbx = document.getElementById("acfiltercheckbox");
 let engfiltchbx = document.getElementById("enginefiltercheckbox");
-
+let insertchbx = document.getElementById("insertcheckbox");
+let bladechbx = document.getElementById("bladecheckbox");
+let lhbulbchbx = document.getElementById("lhbulb");
+let rhbulbchbx = document.getElementById("rhbulb");
 //clear input text fields and checkboxes
 document.getElementById("clearbutton").onclick = function(){
     console.log("clearbtnpressed");
@@ -94,6 +97,15 @@ document.getElementById("oilchangecheckbox").onclick=function(){
             midchbx.checked = false;
             sixtykchbx.checked = false;
 }}
+//checkbox auto-unchecks insert or blades
+document.getElementById("insertcheckbox").onclick=function(){
+    if (insertchbx.checked==true){
+        bladechbx.checked = false;
+}}
+document.getElementById("bladecheckbox").onclick=function(){
+    if (bladechbx.checked==true){
+        insertchbx.checked = false;
+}}
 //collect input values
 function getInputValues(){
     frbr = document.getElementById("frbrinput").value;
@@ -116,8 +128,7 @@ document.getElementById("insertbutton").onclick = function()
     }
     else if (occhbx.checked==true){
         oilChange();
-    }
-}
+    }}
 //copy to clipboard
 document.getElementById("copybutton").onclick = function(){
     var text = document.getElementById('storyFinal');
@@ -159,7 +170,6 @@ function oilChange(){
 function sixtyK(){
     document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ENGINE AIR FILTER\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nDRAIN AND REFILL ATF\nDRAIN AND FILL COOLANT, BLEED COOLING SYSTEM\nREPLACE GEAR OIL, ADD EFI\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
-
 //bg services auto fill final field
 document.getElementById("brakeflushbtn").onclick = function(){
     document.getElementById("storyFinal").value = "PERFORM BG BRAKE FLUID FLUSH\nREPLACE FLUID IN BRAKE FLUID RESERVOIR\nAPPLY PRESSURE TO BRAKE SYSTEM\nBLEED BRAKE FLUID AT EACH WHEEL\nADJUST FLUID LEVEL";
@@ -176,25 +186,237 @@ document.getElementById("coolantbtn").onclick=function(){
 document.getElementById("psbtn").onclick=function(){
     document.getElementById("storyFinal").value = "PERFORM BG POWER STEERING FLUSH SERVICE\nBLEED POWER STEERING SYSTEM";
 }
-
+//misc
+    //filters autofill
+    document.getElementById("acfilterbtn").onclick=function(){
+        document.getElementById("storyFinal").value = "REPLACED AC FILTER";
+    }
+    document.getElementById("enginefilterbtn").onclick=function(){
+        document.getElementById("storyFinal").value = "REPLACED ENGINE AIR FILTER";
+    }
+    document.getElementById("engineacbtn").onclick=function(){
+        document.getElementById("storyFinal").value = "REPLACED ENGINE AND AC AIR FILTERS";
+    }
+    //wipers checkbox for inserts or blades then autofill
+    document.getElementById("frwiperbtn").onclick=function(){
+        if(insertchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH FRONT WIPER INSERTS";
+        }
+        if(bladechbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH FRONT WIPER BLADES";
+        }}
+    document.getElementById("rrwiperbtn").onclick=function(){
+        if(insertchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED REAR WIPER INSERT";
+        }
+        if(bladechbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED REAR WIPER BLADE";
+        }}
+    //battery autofill
+    document.getElementById("battbtn").onclick=function(){
+        document.getElementById("storyFinal").value = "REPLACED 12V BATTERY\nCLEAN POS AND NEG TERMINALS\nTORQUE TO SPEC AND APPLY BATTERY TERMINAL PROTECTOR\nVERIFY OPERATION OF STARTING AND CHARGING SYSTEMS, OK";
+    }
+    document.getElementById("keyfobbtn").onclick=function(){
+        document.getElementById("storyFinal").value = "REPLACE KEY FOB BATTERY";
+    }
+    //bulbs checkbox for location and then autofill
+    document.getElementById("headlightbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH HEADLIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH HEADLIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH HEADLIGHT BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("taillightbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH TAIL LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH TAIL LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH TAIL LIGHT BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("turnsignalfrbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LF TURN SIGNAL BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RF TURN SIGNAL BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH FRONT TURN SIGNAL BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("turnsignalrrbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LR TURN SIGNAL BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RR TURN SIGNAL BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH REAR TURN SIGNAL BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("licensebtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH LICENSE PLATE LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH LICENSE PLATE LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH LICENSE PLATE LIGHT BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("sidemarkerbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH SIDE MARKER BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH SIDE MARKER BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH SIDE MARKER BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("reversebtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH REVERSE BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH REVERSE BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH REVERSE BULBS\nCHECK OPERATION, OK";
+        }}
+    document.getElementById("brakelightbtn").onclick=function(){
+        if(lhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED LH BRAKE LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED RH BRAKE LIGHT BULB\nCHECK OPERATION, OK";
+        }
+        if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
+            document.getElementById("storyFinal").value = "REPLACED BOTH BRAKE LIGHT BULBS\nCHECK OPERATION, OK";
+        }}
 //spencer
 document.getElementById("spencerbutton").onclick = function(){
     document.getElementById("spencerimg").toggleAttribute("hidden");
 }
 //divider title expands categories
+    //declare all things to hide
+let factoryMenuHidden = document.getElementById("factorymenu");
+let bgHidden = document.getElementById("bg");
+let miscHidden = document.getElementById("misc");
+let miscDiv1 = document.getElementById("miscDiv1");
+let miscDiv2 = document.getElementById("miscDiv2");
+let miscDiv3 = document.getElementById("miscDiv3");
+let miscDiv4 = document.getElementById("miscDiv4");
+
+
 document.getElementById("factorymenubutton").onclick=function(){
-    document.getElementById("factorymenu").toggleAttribute("hidden");
+    document.getElementById("menu1").setAttribute("hidden","hidden");
+    if(factoryMenuHidden.style.display==="none"){
+        closeDivs();
+        factoryMenuHidden.style.display="inline-block";
+        document.getElementById("factorymenubutton").style.backgroundColor="green";
+        document.getElementById("bgbutton").style.backgroundColor="black";
+        document.getElementById("miscbtn").style.backgroundColor="black";
+    }
+    else if(factoryMenuHidden.style.display==="inline-block"){
+        factoryMenuHidden.style.display="none";
+    }
+    else if(document.getElementById("factorymenubutton").style.backgroundColor=="black"){
+        document.getElementById("factorymenubutton").style.backgroundColor="green";
+            document.getElementById("miscbtn").style.backgroundColor="black";
+            document.getElementById("bgbutton").style.backgroundColor="black";
+    }
+    else if(document.getElementById("factorymenubutton").style.backgroundColor=="green"){
+        document.getElementById("factorymenubutton").style.backgroundColor="black";
+    }
 }
+
+
+    
 document.getElementById("bgbutton").onclick=function(){
-    document.getElementById("bg").toggleAttribute("hidden");
+    document.getElementById("menu1").setAttribute("hidden","hidden");    
+    if(bgHidden.style.display==="none"){
+        closeDivs();
+        bgHidden.style.display="inline-block";
+        
+    }
+    else if(bgHidden.style.display==="inline-block"){
+        bgHidden.style.display="none";
+    }
+    if(document.getElementById("bgbutton").style.backgroundColor=="black"){
+        document.getElementById("bgbutton").style.backgroundColor="green";
+            document.getElementById("miscbtn").style.backgroundColor="black";
+            document.getElementById("factorymenubutton").style.backgroundColor="black";
+    }
+    else if(document.getElementById("bgbutton").style.backgroundColor=="green"){
+        document.getElementById("bgbutton").style.backgroundColor="black";
+    }
+
+
+
 }
+
 document.getElementById("miscbtn").onclick=function(){
-    document.getElementById("misc").toggleAttribute("hidden");
+    if(document.getElementById("miscbtn").style.backgroundColor=="black"){
+    document.getElementById("miscbtn").style.backgroundColor="green";
+        document.getElementById("bgbutton").style.backgroundColor="black";
+        document.getElementById("factorymenubutton").style.backgroundColor="black";
+    }
+    else if(document.getElementById("miscbtn").style.backgroundColor=="green"){
+    document.getElementById("miscbtn").style.backgroundColor="black";
+    }
+    closeDivs();
+    document.getElementById("menu1").toggleAttribute("hidden");
 }
+//misc submenu buttons
+        document.getElementById("miscDiv1Btn").onclick=function(){             
+                if(miscDiv1.style.display==="none"){
+                    closeDivs();
+                    miscDiv1.style.display="inline-block";
+                }
+                else if(miscDiv1.style.display==="inline-block"){
+                    miscDiv1.style.display="none";
+                }}
+        document.getElementById("miscDiv2Btn").onclick=function(){
+                if(miscDiv2.style.display==="none"){
+                    closeDivs();
+                    miscDiv2.style.display="inline-block";
+                }
+                else if(miscDiv2.style.display==="inline-block"){
+                    miscDiv2.style.display="none";
+                }}     
+        document.getElementById("miscDiv3Btn").onclick=function(){
+                if(miscDiv3.style.display==="none"){
+                    closeDivs();
+                    miscDiv3.style.display="inline-block";
+                }
+                else if(miscDiv3.style.display==="inline-block"){
+                    miscDiv3.style.display="none";
+                }}    
+        document.getElementById("miscDiv4Btn").onclick=function(){
+                if(miscDiv4.style.display==="none"){
+                    closeDivs();
+                    miscDiv4.style.display="inline-block";
+                }
+                else if(miscDiv4.style.display==="inline-block"){
+                    miscDiv4.style.display="none";
+                }}   
 //clear final text field
 document.getElementById("finalstoryclearbutton").onclick=function(){
     document.getElementById("storyFinal").value=null;
 }
-
-
+function closeDivs(){
+        factoryMenuHidden.style.display="none";
+        bgHidden.style.display="none";
+        miscDiv1.style.display="none";
+        miscDiv2.style.display="none";
+        miscDiv3.style.display="none";
+        miscDiv4.style.display="none";
+}
 

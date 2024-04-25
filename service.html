@@ -9,20 +9,31 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <a href="service.html"><button  class="headerbutton">services</button></a>
-    <a href="repair.html"><button class="headerbutton">repairs</button></a>
-    <a href="recall.html"><button  class="headerbutton">recalls</button></a>
+    <a href="index.html"><button  class="titleBtn">HOME</button></a>
+    <a href="service.html"><button  class="titleBtn">SERVICES</button></a>
+    <a href="repair.html"><button class="titleBtn">REPAIRS</button></a>
+    <a href="recall.html"><button  class="titleBtn">RECALLS(INOP)</button></a>
     <h1 class="pagetitle">SERVICES</h1>
+<!-- -->
     <p class="pagedivider">.</p>
-   
-<div id="storyfinaldiv" style=" text-align: left;">
-    <textarea class="textfield" name="" id="storyFinal" cols="60" rows="10" style="border: 2px solid; border-color: black;">
-    </textarea><br>
-    <button class="button" id="copybutton">COPY</button>
-    <button class="button" id="finalstoryclearbutton">CLEAR</button>
+    
+         <button class="headerBtn" id="factorymenubutton" style="background-color: black;">FACTORY MENU</button>
+         <button class="headerBtn" id="bgbutton" style="background-color: black;">BG </button>
+         <button class="headerBtn" id="miscbtn" style="background-color: black;">MISC</button>
+         <p class="pagedivider">.</p>
+
+<!-- menu for misc hidden-->
+<div id="menu1" hidden>
+        <button id="miscDiv1Btn" class="titleBtn">FILTERS</button>
+        <button id="miscDiv2Btn" class="titleBtn">WIPER</button>
+        <button id="miscDiv3Btn" class="titleBtn">BATTERY</button>
+        <button id="miscDiv4Btn" class="titleBtn">BULB</button>
 </div>
-    <p class="dividertitle"> <button class="dividerbtn" id="factorymenubutton">FACTORY MENU</button></p>
-        <div id="factorymenu" hidden>
+<div class="parent">
+    <!--first child, will have all "first child divs in here hidden"-->
+        <!-- factory menu hidden -->
+    <div id="factorymenu" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+        <p class="subdividertitle">FACTORY MENU</p>
             <label class="label" for="oilchangecheckbox">OIL CHANGE: </label>
                 <input type="checkbox" name="oilchangecheckbox" id="oilchangecheckbox"><br>
             <label class="label" for=" midyearcheckbox"> MIDYEAR: </label>
@@ -34,11 +45,11 @@
                 <input name="efi" type="checkbox" id="eficheckbox"><br>
             <label class="label" for="acfilter">WITH A/C FILTER: </label>
                 <input name="acfilter" type="checkbox" id="acfiltercheckbox"><br>
-            <label class="label" for="enginefilter">WITH ENGINE AIR FILTER: </label>
+            <label class="label" f                 or="enginefilter">WITH ENGINE AIR FILTER: </label>
                 <input name="enginefilter" type="checkbox" id="enginefiltercheckbox"><br>
             <label class="label" for="spark plug">WITH SPARK PLUGS: </label>
                 <input name="sparkplug" type="checkbox" id="spcheckbox"><br> 
-         <p class="divider">.</p>
+        <p class="divider">.</p>
             <label class="label" for="type">OIL TYPE: </label>
                 <button class="button" name="type" id="530btn">5W30</button>
                 <button class="button"  id="520btn">5W20</button>
@@ -69,43 +80,67 @@
                 <input class="textfield" type="text" id="oilqtinput"  name="oilqt" style="width: 20px;"><span style=" font-family: monospace;"> QT</span><br><br>
             <button class="button" id="insertbutton">INSERT</button>  
             <button class="button" id="clearbutton">CLEAR</button>
-        </div>
-    <p class="dividertitle"><button class="dividerbtn" id="bgbutton">BG </button></p>
-        <div id="bg" hidden> 
-            <button class="button" id="brakeflushbtn">BRAKE FLUID FLUSH</button>
-            <button class="button" id="inductionbtn">INDUCTION SERVICE</button>
-            <button class="button" id="atfbtn">ATF FLUSH</button>
-            <button class="button" id="coolantbtn">COOLANT FLUSH</button>
-            <button class="button" id="psbtn">POWER STEERING FLUSH</button>
-        </div>  
-    <p class="dividertitle"><button class="dividerbtn" id="miscbtn">BATTERY,BULB,WIPER,FILTERS(INOP)</button></p>
-        <div id="misc" hidden>
-            <p class="subdividertitle">FILTERS</p>
-                <button class="button">REPLACE AC FILTER</button>
-                <button class="button">REPLACE ENGINE AIR FILTER</button>
-                <button class="button">REPLACE AC & ENGINE AIR FILTERS</button>
-            <p class="subdividertitle">WIPERS</p>
-                <label class="label" for="insert">INSERT</label>
-                    <input type="checkbox" name="insert">
-                <label class="label" for="blade">BLADE</label>
-                    <input type="checkbox" name="blade"><br><br><br>
-                <button class="button">REPLACE FRONT WIPERS</button> 
-                <button class="button">REPLACE REAR WIPER</button>
-            <p class="subdividertitle">BATTERY</p>
-                <button class="button">REPLACE BATTERY</button>    
-            <p class="subdividertitle">BULBS</p>
-                <label class="label" for="lhbulb">LH:</label>
-                    <input type="checkbox" name="lhbulb">
-                <label class="label" for="rhbulb">RH:</label>
-                    <input type="checkbox" name="rhbulb"><br><br><br>
-                <button class="button">REPLACE HEADLIGHT BULB</button> 
-                <button class="button">REPLACE TAIL LIGHT BULB</button>    
-                <button class="button">REPLACE TURN SIGNAL FRONT</button><br> 
-                <button class="button">REPLACE TURN SIGNAL REAR</button>
-                <button class="button">REPLACE LICENSE PLATE BULB</button> 
-                <button class="button">REPLACE SIDE MARKER</button>    
-        </div>
+    </div>               
+        <!-- bg hidden -->
+    <div id="bg" style="display: none;vertical-align: middle;padding: 1rem 1rem"> 
+        <p class="subdividertitle">BG</p>
+            <button class="button" id="brakeflushbtn">BRAKE FLUID FLUSH</button><br><br>
+            <button class="button" id="inductionbtn">INDUCTION SERVICE</button><br><br>
+            <button class="button" id="atfbtn">ATF FLUSH</button><br><br>
+            <button class="button" id="coolantbtn">COOLANT FLUSH</button><br><br>
+            <button class="button" id="psbtn">POWER STEERING FLUSH</button><br>                   
+    </div> 
+        <!-- misc <div> not to be used -->
     
+            <!-- misc child 1 -->
+        <div id="miscDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">FILTERS</p>
+                <button class="button" id="acfilterbtn">REPLACE AC FILTER</button><br><br>
+                <button class="button" id="enginefilterbtn">REPLACE ENGINE AIR FILTER</button><br><br>
+                <button class="button" id="engineacbtn">REPLACE AC & ENGINE AIR FILTERS</button>
+        </div>
+            <!-- misc child 2 -->
+        <div id="miscDiv2" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">WIPERS</p>
+            <label class="label" for="insert">INSERT</label>
+            <input type="checkbox" name="insert" id="insertcheckbox">
+            <label class="label" for="blade">BLADE</label>
+            <input type="checkbox" name="blade" id="bladecheckbox"><br><br>
+            <button class="button" id="frwiperbtn">REPLACE FRONT WIPERS</button> <br><br>
+            <button class="button" id="rrwiperbtn">REPLACE REAR WIPER</button>                        
+        </div>
+             <!-- misc child 3 -->
+        <div id="miscDiv3" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">BATTERY</p>
+            <button class="button" id="battbtn">REPLACE BATTERY</button><br><br>  
+            <button class="button" id="keyfobbtn">REPLACE KEY FOB BATTERY</button>                            
+        </div>
+            <!-- misc child 4 -->
+        <div id="miscDiv4" style="display: none;vertical-align: middle;padding: 1rem 1rem">             
+            <p class="subdividertitle">BULBS</p>
+            <label class="label" for="lhbulb">LH:</label>
+            <input type="checkbox" name="lhbulb" id="lhbulb">
+            <label class="label" for="rhbulb" >RH:</label>
+            <input type="checkbox" name="rhbulb" id="rhbulb"><br><br><br>
+            <button class="button" id="headlightbtn">HEADLIGHT</button> 
+            <button class="button" id="turnsignalfrbtn">TURN SIGNAL FRONT</button>
+            <button class="button" id="sidemarkerbtn">SIDE MARKER</button><br><br>
+            <button class="button" id="taillightbtn">TAIL LIGHT</button>    
+            <button class="button" id="turnsignalrrbtn">TURN SIGNAL REAR</button>
+            <button class="button" id="brakelightbtn">BRAKE</button>  
+            <button class="button" id="licensebtn">LICENSE PLATE</button> 
+            <button class="button" id="reversebtn">REVERSE</button> 
+        </div>                            
+    <!--second child-->                    
+    <div class="child1" id="storyfinaldiv">
+        <div style="text-align: center;">
+        <textarea class="textfield" name="" id="storyFinal" cols="60" rows="10" style="border: 2px solid; border-color: black;">
+        </textarea><br>
+        <button class="button" id="copybutton">COPY</button>
+        <button class="button" id="finalstoryclearbutton">CLEAR</button>
+        </div>
+    </div>
+</div>
 <p class="pagedivider">.</p>
     <p style=" font-family: monospace;">notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
     <button class="button" id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">

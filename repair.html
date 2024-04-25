@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,54 +9,112 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <a href="service.html"><button class="headerbutton">services</button></a>
-    <a href="repair.html"><button class="headerbutton">repairs</button></a>
-    <a href="recall.html"><button  class="headerbutton">recalls</button></a>    
+    <a href="index.html"><button  class="titleBtn">HOME</button></a>
+    <a href="service.html"><button class="titleBtn">SERVICES</button></a>
+    <a href="repair.html"><button class="titleBtn">REPAIRS</button></a>
+    <a href="recall.html"><button  class="titleBtn">RECALLS(INOP)</button></a>    
     <h1 class="pagetitle">REPAIRS</h1>
     <p class="pagedivider">.</p>
+    
+        <button class="headerBtn" id="hdrBtn1" style="background-color: black;"> BRAKES </button>
+        <button class="headerBtn" id="hdrBtn2" style="background-color: black;">STEERING/SUSPENSION</button>
+        <button class="headerBtn" id="hdrBtn3" style="background-color: black;">ENGINE(INOP)</button>
+        <button class="headerBtn" id="hdrBtn4" style="background-color: black;">A/C(INOP)</button>
+        <button class="headerBtn" id="hdrBtn5" style="background-color: black;">ELECTRICAL(INOP)</button>
+        <button class="headerBtn" id="hdrBtn6" style="background-color: black;">TRANSMISSION(INOP)</button>
+        <p class="pagedivider">.</p>
 
-    <div>
-        <textarea name="" id="storyFinal" cols="60" rows="10" style="border: 2px solid; border-color: black;">
-        </textarea><br>
-        <button class="button" id="copybutton">COPY</button>
-        <button class="button" id="finalstoryclearbutton">CLEAR</button>
-    </div>   
-    <p class="dividertitle"><button class="dividerbtn" id="brakesbtn"> BRAKES </button></p>
-        <div id="brakes" hidden>
+
+    
+<!--place hidden submenus here-->
+<!--brakes-->
+<div id="menu1" hidden>
+    <button id="brkDiv1Btn" class="titleBtn">PADS/ROTORS</button>
+    <button id="brkDiv2Btn" class="titleBtn">BOOSTER</button>
+    <button id="brkDiv3Btn" class="titleBtn">MASTERCYLINDER</button>
+</div>
+<!--steering/suspension-->
+<div id="menu2" hidden>
+    <button id="sSDiv1Btn" class="titleBtn">TIRES</button>
+    <button id="sSDiv2Btn" class="titleBtn">CV AXLE/BOOT</button>
+    <button id="sSDiv3Btn" class="titleBtn">POWER STEERING</button>
+    <button id="sSDiv4Btn" class="titleBtn">SUSPENSION(INOP)</button>
+    <button id="sSDiv5Btn" class="titleBtn">WHEEL BEARINGS(INOP)</button>
+    <button id="sSDiv6Btn" class="titleBtn">UJOINT/DRIVESHAFT(INOP)</button>
+</div>
+<!--engine-->
+<div id="menu3" hidden>
+</div>
+<!--ac-->
+<div id="menu4" hidden>
+</div>
+<!--electrical-->
+<div id="menu5" hidden>
+</div>
+<!---transmission-->
+<div id="menu6" hidden>
+</div>
+<!--main area start-->
+<div class="parent">
+<!--children1-->
+    <!--brakes-->
+        <!--pads-->
+        <div id="brkDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">PADS/ROTORS</p>
-                    <label class="label" for="rotors">REPLACED ROTORS</label>
+                <label class="label" for="rotors">REPLACED ROTORS</label>
                     <input type="checkbox" id="replacerotorscheckbox" name="rotors"><br><br>
-                    <button class="button" id="frontbrakebutton">FRONT BRAKES</button><span> </span>
-                    <button class="button" id="rearbrakebutton">REAR BRAKES</button><span> </span>
-                    <button class="button" id="frontandrearbrakebutton">FRONT AND REAR BRAKES</button>
-            <p class="subdividertitle">BOOSTER</p>
-                    <button class="button" id="replaceboosterbtn">REPLACE BRAKE BOOSTER</button>
-            <p class="subdividertitle">MASTER CYLINDER</p>
-                    <button class="button" id="replacemasterbtn">REPLACE MASTER CYLINDER</button>
+                <button class="button" id="frontbrakebutton">FRONT BRAKES</button><br><br>
+                <button class="button" id="rearbrakebutton">REAR BRAKES</button><br><br>
+                <button class="button" id="frontandrearbrakebutton">FRONT AND REAR BRAKES</button>
         </div>
-    <p class="dividertitle"><button class="dividerbtn" id="steeringbtn">STEERING/SUSPENSION</button></p>
-        <div id="steeringsuspension" hidden>
+        <!--booster-->
+        <div id="brkDiv2" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">BOOSTER</p>
+                <button class="button" id="replaceboosterbtn">REPLACE BRAKE BOOSTER</button>
+        </div>
+        <!--master-->
+        <div id="brkDiv3" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">MASTER CYLINDER</p>
+                <button class="button" id="replacemasterbtn">REPLACE MASTER CYLINDER</button>
+        </div>
+    <!--steering/suspension-->
+        <!--tires-->
+        <div id="sSDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">TIRES</p>
                     <label class="label" for="onetire">1:</label>
-                        <input type="checkbox" id="1tire" name="onetire">
+                        <input type="checkbox" id="1tire" name="onetire"><br>
                     <label class="label" for="twotires">2:</label>
-                        <input type="checkbox" id="2tire" name="twotires">
+                        <input type="checkbox" id="2tire" name="twotires"><br>
                     <label class="label" for="threetires">3:</label>
-                        <input type="checkbox" id="3tire" name="threetires">
+                        <input type="checkbox" id="3tire" name="threetires"><br>
                     <label class="label" for="fourtires">4:</label>
-                        <input type="checkbox" id="4tire" name="fourtires">
-                    <button class="button" id="mountandbalancebutton">MOUNT AND BALANCE</button>
+                        <input type="checkbox" id="4tire" name="fourtires"><br><br>
+                    <button class="button" id="mountandbalancebutton">MOUNT AND BALANCE</button><br><br>
+                    <button class="button" id="frAlignBtn">FRONT ALIGNMENT</button><br><br>
+                    <button class="button" id="AlignBtn">ALL WHEEL ALIGNMENT</button>
+
+
+        </div>
+        <!--cv axle/boot-->
+        <div id="sSDiv2" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">CV AXLE/BOOT</p>
                     <label class="label" for="lhboot">LH:</label>
                         <input type="checkbox" id="lhboot" name="lhboot">
                     <label class="label" for="rhboot">RH:</label>
-                        <input type="checkbox" id="rhboot" name="rhboot"> 
-                    <button class="button" id="innerouterbtn">REPLACE INNER AND OUTER BOOT(S)</button> 
-                    <button class="button" id="innerbtn" >REPLACE INNER BOOT(S)</button> 
-            <p class="subdividertitle">POWER STEERING(INOP)</p>
-                    <button class="button">REPLACE STEERING RACK</button>
-                    <button class="button">REPLACE P/S PUMP</button>
-                    <button class="button">REPLACE P/S LINES</button>
+                        <input type="checkbox" id="rhboot" name="rhboot"><br><br>
+                    <button class="button" id="innerouterbtn">REPLACE INNER AND OUTER BOOT(S)</button><br><br>
+                    <button class="button" id="innerbtn" >REPLACE INNER BOOT(S)</button> <br><br>
+                    <button class="button" id="replaceShaft" >REPLACE AXLE SHAFT ASSY</button>
+        </div>
+        <!--powersteering-->
+        <div id="sSDiv3" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">POWER STEERING</p>
+                    <button class="button" id="steeringrackbtn">REPLACE STEERING RACK</button><br><br>
+                    <button class="button" id="pspumpbtn">REPLACE P/S PUMP</button><br><br>
+                    <button class="button" id="pslinebtn">REPLACE P/S LINES</button><br>
+        </div>
+        <!--suspension-->
+        <div id="sSDiv4" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">SUSPENSION(INOP)</p>
                     <label class="label" for="lfsuspension">LF:</label>
                         <input type="checkbox" name="lfsuspension" id="">
@@ -65,9 +124,12 @@
                         <input type="checkbox" name="lrsuspension" id="">
                     <label class="label" for="rrsuspension">RR:</label>
                         <input type="checkbox" name="rrsuspension" id=""><br><br><br>
-                    <button class="button" >REPLACE SHOCK(S)</button>
-                    <button class="button" >REPLACE ENDLINK(S)</button>
-                    <button class="button" >REPLACE STRUT ASSY(S)</button>          
+                    <button class="button" >REPLACE SHOCK(S)</button><br><br>
+                    <button class="button" >REPLACE ENDLINK(S)</button><br><br>
+                    <button class="button" >REPLACE STRUT ASSY(S)</button> <br><br>
+        </div>
+        <!--wheelbearings-->
+        <div id="sSDiv5" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">WHEEL BEARINGS(INOP)</p>
                     <label class="label" for="lfbearing">LF:</label>
                         <input type="checkbox" name="lfbearing" id="">
@@ -77,58 +139,40 @@
                         <input type="checkbox" name="lrbearing" id="">
                     <label class="label" for="rrbearing">RR:</label>
                         <input type="checkbox" name="rrbearing" id=""><br><br><br>
-                    <button class="button" >REPLACE BEARING (ASSY)</button> 
-                    <button class="button" >REPLACE BEARING (PRESS)</button>    
+                    <button class="button" >REPLACE BEARING (ASSY)</button> <br><br>
+                    <button class="button" >REPLACE BEARING (PRESS)</button> <br>
+        </div>
+        <!--ujointdriveshaft-->
+        <div id="sSDiv6" style="display: none;vertical-align: middle;padding: 1rem 1rem">
             <p class="subdividertitle">U-JOINT/DRIVESHAFT(INOP)</p>
                     <button class="button">REPLACE UJOINTS</button>
         </div>
-        <p class="dividertitle"><button class="dividerbtn" id="enginebtn">ENGINE(INOP)</button></p>
-            <div id="engine" hidden>
-                <p class="subdividertitle">WHY TF YOU OPEN THIS IT SAYS INOP</p>
-                <p class="subdividertitle">(inop)</p>
-                <p class="subdividertitle">(inop)</p>
-                <p class="subdividertitle">(inop)</p>
-            </div>
-        <p class="dividertitle"><button class="dividerbtn" id="acbtn">A/C(INOP)</button></p>
-            <div id="ac"  hidden>
-                <p class="subdividertitle">DUMBASS</p>
-                <p class="subdividertitle">(inop)</p>
-                <p class="subdividertitle">(inop)</p>
-                <p class="subdividertitle">(inop)</p>
-            </div>
-        <p class="dividertitle"><button class="dividerbtn" id="elecbtn">ELECTRICAL(INOP)</button></p>
-            <div id="electrical"  hidden>
-                <p class="subdividertitle">NULL</p>
-                <p class="subdividertitle">NULL</p>
-                <p class="subdividertitle">NULL</p>
-                <p class="subdividertitle">NULL</p>
-            </div>
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-   
-   
-
-
+    <!--engine-->
+    <!--ac-->
+    <!--electrical-->
+    <!--child2-->
+    <div class="child1">
+        <div style="text-align: center;">
+        <textarea name="" id="storyFinal" cols="60" rows="10" style="border: 2px solid; border-color: black;">
+        </textarea><br>
+        <button class="button" id="copybutton">COPY</button>
+        <button class="button" id="finalstoryclearbutton">CLEAR</button>
+        </div>  
+    </div>    
+</div>
+<!--main area end-->
     <p class="pagedivider">.</p>
-    <p>notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
-    <button id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">
+    <p style=" font-family: monospace;">notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
+    <button class="button" id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">
     <script src="repair.js"></script>
 </body>
 </html>
+<!---
+Naming rules:
+    shortened:
+        brakes = brk;
+        steering suspension = sS;
+        engine = eng;
+        ac = ac;
+        electrical = elc;
+-->
