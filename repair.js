@@ -1,3 +1,4 @@
+let uses = +localStorage.getItem("numberofclicks");
 
 //checkboxes
 let onetire = document.getElementById("1tire");
@@ -8,31 +9,36 @@ let replacerotor = document.getElementById("replacerotorscheckbox");
 let lhcvchbx = document.getElementById("lhboot");
 let rhcvchbx = document.getElementById("rhboot");
 //keyboard shortcuts
-document.addEventListener('keypress', function(e) { 
-    if (e.keyCode === 13) {
+document.addEventListener('keydown', function(e) { 
+    if (e.key == "Control") {
         document.getElementById("copybutton").click();
-    }});  
-    document.addEventListener('keypress', function(e){ 
-        if (e.keyCode == 32) {
-            document.getElementById("insertbutton").click();
-        }});
+}});  
+document.addEventListener('keydown', function(e){ 
+    if (e.key == " ") {
+        document.getElementById("insertbutton").click();  
+       
+}});
  //copy function       
 document.getElementById("copybutton").onclick = function(){
+    whosUsing();
     var text = document.getElementById('storyFinal');
     text.select();
     document.execCommand('copy');
 } 
 //clear final text field
 document.getElementById("finalstoryclearbutton").onclick=function(){
+    whosUsing();
     document.getElementById("storyFinal").value=null;
 }
 //spencer 
 document.getElementById("spencerbutton").onclick = function(){
+    whosUsing();
     document.getElementById("spencerimg").toggleAttribute("hidden");
 }
 //brakes main category
     //brakes check if rotors replaced and autofills field
         document.getElementById("frontbrakebutton").onclick = function (){
+            whosUsing();
             if(replacerotor.checked == true){
                 document.getElementById("storyFinal").value = "REPLACED FRONT ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND BURNISH BRAKES, OK";
             }
@@ -40,6 +46,7 @@ document.getElementById("spencerbutton").onclick = function(){
             document.getElementById("storyFinal").value = "MACHINED FRONT ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND BURNISH BRAKES, OK";
         }}
         document.getElementById("rearbrakebutton").onclick = function (){
+            whosUsing();
             if(replacerotor.checked == true){
                 document.getElementById("storyFinal").value = "REPLACED REAR ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK"; 
             }
@@ -47,6 +54,7 @@ document.getElementById("spencerbutton").onclick = function(){
             document.getElementById("storyFinal").value = "MACHINED REAR ROTORS\nREPLACED PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK"; 
         }}
         document.getElementById("frontandrearbrakebutton").onclick = function (){
+            whosUsing();
             if(replacerotor.checked == true){
                 document.getElementById("storyFinal").value = "REPLACED FRONT AND REAR ROTORS\nREPLACED ALL PADS AND SHIMS\nCLEAN AND LUBE SLIDE PINS\nTORQUED ALL FASTENERS TO SPEC\nADJUST PARKING BRAKE\nROAD TEST AND BURNISH BRAKES, OK"; 
             }
@@ -55,16 +63,19 @@ document.getElementById("spencerbutton").onclick = function(){
         }}
      //booster autofills
         document.getElementById("replaceboosterbtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value ="REPLACED BRAKE BOOSTER ASSY\nCHECK AND ADJUST PUSHROD LENGTH\nTORQUED ALL FASTENERS TO SPEC\nVERIFY PEDAL FREEPLAY AND NORMAL OPERATION"
         }
      //mastery cylinder autofills
         document.getElementById("replacemasterbtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value ="DRAIN BRAKE RESERVOIR\nREPLACED BRAKE MASTER CYLINDER ASSY\nCHECK AND ADJUST PUSHROD LENGTH\nTORQUED ALL FASTENERS TO SPEC\nFILL AND BLEED MASTER CYLINDER\nBLEED ALL CALIPERS\nROAD TEST, OK\nVERIFY PEDAL FREEPLAY AND NORMAL OPERATION"
 
         }
 //steering suspension main      
     //tires check how many tires replaced and autofills
         document.getElementById("mountandbalancebutton").onclick = function(){
+            whosUsing();
             if(onetire.checked == true){
                 document.getElementById("storyFinal").value = "MOUNT AND BALANCE ONE TIRE\nSET TO 35 PSI\nTORQUED ALL LUG NUTS TO 80 FT LBS";
             }
@@ -79,6 +90,7 @@ document.getElementById("spencerbutton").onclick = function(){
             }
         }
         document.getElementById("frAlignBtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value = "ALIGN FRONT SUSPENSION\nADJUST ANGLES TO SPEC\nROAD TEST, OK\nVEHICLE TRACKING STRAIGHT";
         }
         document.getElementById("AlignBtn").onclick=function(){
@@ -86,6 +98,7 @@ document.getElementById("spencerbutton").onclick = function(){
         }
     //CV axle autofills  
         document.getElementById("innerouterbtn").onclick=function(){
+            whosUsing();
             if(lhcvchbx.checked==true){
                 document.getElementById("storyFinal").value= "REMOVE LH FRONT AXLE\nDISSASEMBLE CV AXLE\nREPLACE LH INNER AND OUTER CV BOOTS\nAPPLY NEW GREASE, CLAMPS, AND REPLACE AXLE NUT\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION";
             }
@@ -97,6 +110,7 @@ document.getElementById("spencerbutton").onclick = function(){
             }
         }
         document.getElementById("innerbtn").onclick=function(){
+            whosUsing();
             if(lhcvchbx.checked==true){
                 document.getElementById("storyFinal").value= "REMOVE LH FRONT AXLE\nDISSASEMBLE CV AXLE\nREPLACE LH INNER CV BOOT\nAPPLY NEW GREASE, CLAMPS, AND REPLACE AXLE NUT\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION";
             }
@@ -108,6 +122,7 @@ document.getElementById("spencerbutton").onclick = function(){
             }
         }
         document.getElementById("replaceShaft").onclick=function(){
+            whosUsing();
             if(lhcvchbx.checked==true){
                 document.getElementById("storyFinal").value= "REPLACED LH CV AXLE ASSY\nREPLACED AXLE NUT\nTORQUED ALL FASTENERS TO SPEC\nROAD TEST AND VERIFY NORMAL OPERATION, OK";
             }
@@ -120,12 +135,15 @@ document.getElementById("spencerbutton").onclick = function(){
         }
     //steering rack
         document.getElementById("steeringrackbtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value= "LOCK STEERING WHEEL\nDISCONNECT P/S LINES AND DRAIN FLUID\nDISCONNECT INTERMEDIATE SHAFT\nDISCONNECT BOTH OUTER TIE ROD ENDS\nREMOVE AND REPLACE STEERING RACK\nCENTER NEW PART\nREINSTALL TIE ROD ENDS AND REPLACE COTTER PINS\nREINSTALL P/S LINES\nREINSTALL INTERMEDIATE SHAFT\nFILL AND BLEED SYSTEM\nALIGN FRONT SUSPENSION AND ROAD TEST, OK";
         }
         document.getElementById("pspumpbtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value= "DRAIN P/S FLUID\nREMOVE DRIVE BELT\nREMOVE AND REPLACE P/S PUMP\nREINSTALL DRIVE BELT\nFILL AND BLEED P/S SYSTEM\nCHECK OPERATION, OK";
         }
         document.getElementById("pslinebtn").onclick=function(){
+            whosUsing();
             document.getElementById("storyFinal").value= "REMOVE P/S LINE\nFILL AND BLEED P/S SYSTEM\nCHECK FOR LEAKS, OK";
         }
 //menu change color
@@ -139,6 +157,7 @@ let hdrBtn6=document.getElementById("hdrBtn6");
 
 //Open Menus
 document.getElementById("hdrBtn1").onclick=function(){
+    whosUsing();
     document.getElementById("menu1").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn1.style.backgroundColor=="black"){
@@ -160,6 +179,7 @@ document.getElementById("hdrBtn1").onclick=function(){
 
 }
 document.getElementById("hdrBtn2").onclick=function(){
+    whosUsing();
     document.getElementById("menu2").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn2.style.backgroundColor=="black"){
@@ -181,6 +201,7 @@ document.getElementById("hdrBtn2").onclick=function(){
 
 }
 document.getElementById("hdrBtn3").onclick=function(){
+    whosUsing();
     document.getElementById("menu3").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn3.style.backgroundColor=="black"){
@@ -202,6 +223,7 @@ document.getElementById("hdrBtn3").onclick=function(){
 
 }
 document.getElementById("hdrBtn4").onclick=function(){
+    whosUsing();
     document.getElementById("menu4").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn4.style.backgroundColor=="black"){
@@ -223,6 +245,7 @@ document.getElementById("hdrBtn4").onclick=function(){
    
 }
 document.getElementById("hdrBtn5").onclick=function(){
+    whosUsing();
     document.getElementById("menu5").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn5.style.backgroundColor=="black"){
@@ -244,6 +267,7 @@ document.getElementById("hdrBtn5").onclick=function(){
 
 }
 document.getElementById("hdrBtn6").onclick=function(){
+    whosUsing();
     document.getElementById("menu6").toggleAttribute("hidden");
     closeDivs();
     if(hdrBtn6.style.backgroundColor=="black"){
@@ -277,6 +301,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
 //Menu Btns show Divs
     //BRAKES
         document.getElementById("brkDiv1Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(brkDiv1.style.display==="none"){
                 brkDiv1.style.display="inline-block";
@@ -285,6 +310,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 brkDiv1.style.display="none";
             }}
         document.getElementById("brkDiv2Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(brkDiv2.style.display==="none"){
                 brkDiv2.style.display="inline-block";
@@ -293,6 +319,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 brkDiv2.style.display="none";
             }}
         document.getElementById("brkDiv3Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(brkDiv3.style.display==="none"){
                 brkDiv3.style.display="inline-block";
@@ -302,6 +329,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
             }}
     //STEERING AND SUSPENSION
         document.getElementById("sSDiv1Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(sSDiv1.style.display==="none"){
                 sSDiv1.style.display="inline-block";
@@ -310,6 +338,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 sSDiv1.style.display="none";
             }}
         document.getElementById("sSDiv2Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(sSDiv2.style.display==="none"){
                 sSDiv2.style.display="inline-block";
@@ -318,6 +347,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 sSDiv2.style.display="none";
             }}
         document.getElementById("sSDiv3Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(sSDiv3.style.display==="none"){
                 sSDiv3.style.display="inline-block";
@@ -326,6 +356,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 sSDiv3.style.display="none";
             }}
         document.getElementById("sSDiv4Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(sSDiv4.style.display==="none"){
                 sSDiv4.style.display="inline-block";
@@ -342,6 +373,7 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 sSDiv5.style.display="none";
             }}
         document.getElementById("sSDiv6Btn").onclick=function(){
+            whosUsing();
             closeDivs();
             if(sSDiv6.style.display==="none"){
                 sSDiv6.style.display="inline-block";
@@ -367,4 +399,9 @@ function closeDivs(){
 //menu change color
 function menuColor(){
 
+}
+
+function whosUsing(){
+    uses++;
+    localStorage.setItem("numberofclicks", uses);
 }

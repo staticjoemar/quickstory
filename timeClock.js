@@ -14,15 +14,50 @@ else{
 document.getElementById("loginBtn").onclick=function(){
     let a = document.getElementById("x").value;
     let b = document.getElementById("y").value;
+    if((a == "dev32492u3nkjfdsnt")&&(b=="teste0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3nkjfdsnt")&&(b=="teste0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3nkjfdsnt")&&(b=="teste0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3nkjfdsnt")&&(b=="teste0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
     if((a == "devtest")&&(b=="tester188")){
         document.getElementById("main").removeAttribute("hidden");
         document.getElementById("login").setAttribute("hidden","hidden");
-        sessionStorage.setItem("login", "xyz");
-    }
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3njfdsnt")&&(b=="teste092342knsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3nkjfdsnt")&&(b=="t3este0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492u3nkjfd3snt")&&(b=="teste09233jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "dev32492nkjfdsnt")&&(b=="teste0923j42knsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
+    if((a == "de48283492v32492u3nkjfdsnt")&&(b=="teste423v0923jknsdo")){
+        document.getElementById("main").removeAttribute("hidden");
+        document.getElementById("login").setAttribute("hidden","hidden");
+        sessionStorage.setItem("login", "xyz");}
     else {
         document.getElementById("failed").textContent = "INVALID LOGIN"
-    }
-}
+    }}
+
 
 let sec = 0;
 let count =0;

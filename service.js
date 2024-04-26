@@ -1,3 +1,6 @@
+//count clicks
+let uses = +localStorage.getItem("numberofclicks");
+
 //textfields
 let servicetype 
 let frbr
@@ -22,6 +25,7 @@ let rhbulbchbx = document.getElementById("rhbulb");
 let ocochbx = document.getElementById("oco");
 //clear input text fields and checkboxes
 document.getElementById("clearbutton").onclick = function(){
+    whosUsing();
     console.log("clearbtnpressed");
    document.getElementById("frbrinput").value = null;
    document.getElementById("rrbrinput").value = null;
@@ -51,73 +55,86 @@ document.addEventListener('keydown', function(e){
 }});
 //oil filter and oil type buttons set text field values        
 document.getElementById("530btn").onclick = function(){
+    whosUsing();
     document.getElementById("oiltypeinput").value = "5W30";
 }
 document.getElementById("520btn").onclick = function(){
+    whosUsing();
     document.getElementById("oiltypeinput").value = "5W20";
 }
 document.getElementById("020btn").onclick = function(){
+    whosUsing();
     document.getElementById("oiltypeinput").value = "0W20";
 }
 document.getElementById("016btn").onclick = function(){
+    whosUsing();
     document.getElementById("oiltypeinput").value = "0W16";
 }
 document.getElementById("a1btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "A1";
 }
 document.getElementById("a4btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "A4";
 }
 document.getElementById("a5btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "A5";
 }
 document.getElementById("a6btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "A6";
 }
 document.getElementById("n1btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "N1";
 }
 document.getElementById("d1btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "D1";
 }
 document.getElementById("d3btn").onclick = function(){
+    whosUsing();
     document.getElementById("filterinput").value = "D3";
 }
 //checkbox auto-unchecks service type
 document.getElementById("midyearcheckbox").onclick=function(){
+    whosUsing();
 if (midchbx.checked==true){
     sixtykchbx.checked=false;
     occhbx.checked = false;
     ocochbx.checked = false;
-
-    
 }}
 document.getElementById("60kcheckbox").onclick=function(){
+    whosUsing();
     if (sixtykchbx.checked==true){
         midchbx.checked = false;
         occhbx.checked = false;
         ocochbx.checked = false;
-
 }}
 document.getElementById("oilchangecheckbox").onclick=function(){
+    whosUsing();
         if (occhbx.checked==true){
             midchbx.checked = false;
             sixtykchbx.checked = false;
             ocochbx.checked = false;
 }}
 document.getElementById("oco").onclick=function(){
+    whosUsing();
     if (ocochbx.checked==true){
         midchbx.checked = false;
         sixtykchbx.checked = false;
         occhbx.checked = false;
-
 }}
 //checkbox auto-unchecks insert or blades
 document.getElementById("insertcheckbox").onclick=function(){
+    whosUsing();
     if (insertchbx.checked==true){
         bladechbx.checked = false;
 }}
 document.getElementById("bladecheckbox").onclick=function(){
+    whosUsing();
     if (bladechbx.checked==true){
         insertchbx.checked = false;
 }}
@@ -134,6 +151,7 @@ function getInputValues(){
 //insert values into final text field
 document.getElementById("insertbutton").onclick = function()
 {
+    whosUsing();
     getInputValues();
     if(midchbx.checked == true){
         midYear();
@@ -143,9 +161,14 @@ document.getElementById("insertbutton").onclick = function()
     }
     else if (occhbx.checked==true){
         oilChange();
-    }}
+    }
+    else if (ocochbx.checked==true){
+        threeK();
+    }
+}
 //copy to clipboard
 document.getElementById("copybutton").onclick = function(){
+    whosUsing();
     var text = document.getElementById('storyFinal');
     text.select();
     document.execCommand('copy');
@@ -185,35 +208,48 @@ function oilChange(){
 function sixtyK(){
     document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ENGINE AIR FILTER\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + " /32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nDRAIN AND REFILL ATF\nDRAIN AND FILL COOLANT, BLEED COOLING SYSTEM\nREPLACE GEAR OIL, ADD EFI\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
 }
+function threeK(){
+    document.getElementById("storyFinal").value = "TOPPED OFF FLUIDS\nPERFORM BATTERY CHECK\nSET TO 35 PSI\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype +" ADDED KREX\nRESET MAINTENANCE LIGHT";
+
+}
 //bg services auto fill final field
 document.getElementById("brakeflushbtn").onclick = function(){
+    whosUsing();
     document.getElementById("storyFinal").value = "PERFORM BG BRAKE FLUID FLUSH\nREPLACE FLUID IN BRAKE FLUID RESERVOIR\nAPPLY PRESSURE TO BRAKE SYSTEM\nBLEED BRAKE FLUID AT EACH WHEEL\nADJUST FLUID LEVEL";
 }
 document.getElementById("inductionbtn").onclick = function(){
+    whosUsing();
     document.getElementById("storyFinal").value = "PERFORM BG AIR INDUCTION SERVICE\nDISCONNECT AIR INTAKE HOSE AND INSERT INDUCTION CLEANER\nRUN VEHICLE AND SNAP THROTTLE INTERMITTENTLY\nREINSTALL INTAKE AND ADD BG FUEL ADDITIVE";
 }
 document.getElementById("atfbtn").onclick = function(){
+    whosUsing();
     document.getElementById("storyFinal").value = "CHECK AND ADJUST ATF LEVEL, ADD ATF CLEANER\nDISCONNECT TRANSMISSION LINE AND INSTALL BG ATF FLUSH MACHINE LINES\nRUN VEHICLE\nREINSTALL TRANSMISSION LINES\nVERIFY FLUID LEVEL OK";
 }
 document.getElementById("coolantbtn").onclick=function(){
+    whosUsing();
     document.getElementById("storyFinal").value = "PERFORM BG COOLANT FLUSH SERVICE\nSTART VEHICLE AND BRING TO OPERATING TEMP\nBLEED COOLING SYSTEM";
 }
 document.getElementById("psbtn").onclick=function(){
+    whosUsing();
     document.getElementById("storyFinal").value = "PERFORM BG POWER STEERING FLUSH SERVICE\nBLEED POWER STEERING SYSTEM";
 }
 //misc
     //filters autofill
     document.getElementById("acfilterbtn").onclick=function(){
+        whosUsing();
         document.getElementById("storyFinal").value = "REPLACED AC FILTER";
     }
     document.getElementById("enginefilterbtn").onclick=function(){
+        whosUsing();
         document.getElementById("storyFinal").value = "REPLACED ENGINE AIR FILTER";
     }
     document.getElementById("engineacbtn").onclick=function(){
+        whosUsing();
         document.getElementById("storyFinal").value = "REPLACED ENGINE AND AC AIR FILTERS";
     }
     //wipers checkbox for inserts or blades then autofill
     document.getElementById("frwiperbtn").onclick=function(){
+        whosUsing();
         if(insertchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED BOTH FRONT WIPER INSERTS";
         }
@@ -221,6 +257,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH FRONT WIPER BLADES";
         }}
     document.getElementById("rrwiperbtn").onclick=function(){
+        whosUsing();
         if(insertchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED REAR WIPER INSERT";
         }
@@ -229,13 +266,16 @@ document.getElementById("psbtn").onclick=function(){
         }}
     //battery autofill
     document.getElementById("battbtn").onclick=function(){
+        whosUsing();
         document.getElementById("storyFinal").value = "REPLACED 12V BATTERY\nCLEAN POS AND NEG TERMINALS\nTORQUE TO SPEC AND APPLY BATTERY TERMINAL PROTECTOR\nVERIFY OPERATION OF STARTING AND CHARGING SYSTEMS, OK";
     }
     document.getElementById("keyfobbtn").onclick=function(){
+        whosUsing();
         document.getElementById("storyFinal").value = "REPLACE KEY FOB BATTERY";
     }
     //bulbs checkbox for location and then autofill
     document.getElementById("headlightbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LH HEADLIGHT BULB\nCHECK OPERATION, OK";
         }
@@ -246,6 +286,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH HEADLIGHT BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("taillightbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LH TAIL LIGHT BULB\nCHECK OPERATION, OK";
         }
@@ -256,6 +297,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH TAIL LIGHT BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("turnsignalfrbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LF TURN SIGNAL BULB\nCHECK OPERATION, OK";
         }
@@ -266,6 +308,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH FRONT TURN SIGNAL BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("turnsignalrrbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LR TURN SIGNAL BULB\nCHECK OPERATION, OK";
         }
@@ -276,6 +319,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH REAR TURN SIGNAL BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("licensebtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LH LICENSE PLATE LIGHT BULB\nCHECK OPERATION, OK";
         }
@@ -286,6 +330,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH LICENSE PLATE LIGHT BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("sidemarkerbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LH SIDE MARKER BULB\nCHECK OPERATION, OK";
         }
@@ -306,6 +351,7 @@ document.getElementById("psbtn").onclick=function(){
             document.getElementById("storyFinal").value = "REPLACED BOTH REVERSE BULBS\nCHECK OPERATION, OK";
         }}
     document.getElementById("brakelightbtn").onclick=function(){
+        whosUsing();
         if(lhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED LH BRAKE LIGHT BULB\nCHECK OPERATION, OK";
         }
@@ -317,6 +363,7 @@ document.getElementById("psbtn").onclick=function(){
         }}
 //spencer
 document.getElementById("spencerbutton").onclick = function(){
+    whosUsing();
     document.getElementById("spencerimg").toggleAttribute("hidden");
 }
 //divider title expands categories
@@ -331,6 +378,7 @@ let miscDiv4 = document.getElementById("miscDiv4");
 
 
 document.getElementById("factorymenubutton").onclick=function(){
+    whosUsing();
     document.getElementById("menu1").setAttribute("hidden","hidden");
     if(factoryMenuHidden.style.display==="none"){
         closeDivs();
@@ -352,6 +400,7 @@ document.getElementById("factorymenubutton").onclick=function(){
 
     
 document.getElementById("bgbutton").onclick=function(){
+    whosUsing();
     document.getElementById("menu1").setAttribute("hidden","hidden");    
     if(bgHidden.style.display==="none"){
         closeDivs();
@@ -375,6 +424,7 @@ document.getElementById("bgbutton").onclick=function(){
 }
 
 document.getElementById("miscbtn").onclick=function(){
+    whosUsing();
     if(document.getElementById("miscbtn").style.backgroundColor=="black"){
     document.getElementById("miscbtn").style.backgroundColor="green";
         document.getElementById("bgbutton").style.backgroundColor="black";
@@ -387,7 +437,8 @@ document.getElementById("miscbtn").onclick=function(){
     document.getElementById("menu1").toggleAttribute("hidden");
 }
 //misc submenu buttons
-        document.getElementById("miscDiv1Btn").onclick=function(){             
+        document.getElementById("miscDiv1Btn").onclick=function(){   
+            whosUsing();          
                 if(miscDiv1.style.display==="none"){
                     closeDivs();
                     miscDiv1.style.display="inline-block";
@@ -396,6 +447,7 @@ document.getElementById("miscbtn").onclick=function(){
                     miscDiv1.style.display="none";
                 }}
         document.getElementById("miscDiv2Btn").onclick=function(){
+            whosUsing();
                 if(miscDiv2.style.display==="none"){
                     closeDivs();
                     miscDiv2.style.display="inline-block";
@@ -404,6 +456,7 @@ document.getElementById("miscbtn").onclick=function(){
                     miscDiv2.style.display="none";
                 }}     
         document.getElementById("miscDiv3Btn").onclick=function(){
+            whosUsing();
                 if(miscDiv3.style.display==="none"){
                     closeDivs();
                     miscDiv3.style.display="inline-block";
@@ -412,6 +465,7 @@ document.getElementById("miscbtn").onclick=function(){
                     miscDiv3.style.display="none";
                 }}    
         document.getElementById("miscDiv4Btn").onclick=function(){
+            whosUsing();
                 if(miscDiv4.style.display==="none"){
                     closeDivs();
                     miscDiv4.style.display="inline-block";
@@ -422,6 +476,7 @@ document.getElementById("miscbtn").onclick=function(){
 //clear final text field
 document.getElementById("finalstoryclearbutton").onclick=function(){
     document.getElementById("storyFinal").value=null;
+    whosUsing();
 }
 function closeDivs(){
         factoryMenuHidden.style.display="none";
@@ -430,5 +485,10 @@ function closeDivs(){
         miscDiv2.style.display="none";
         miscDiv3.style.display="none";
         miscDiv4.style.display="none";
+}
+
+function whosUsing(){
+    uses++;
+    localStorage.setItem("numberofclicks", uses);
 }
 
