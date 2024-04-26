@@ -19,6 +19,7 @@ let insertchbx = document.getElementById("insertcheckbox");
 let bladechbx = document.getElementById("bladecheckbox");
 let lhbulbchbx = document.getElementById("lhbulb");
 let rhbulbchbx = document.getElementById("rhbulb");
+let ocochbx = document.getElementById("oco");
 //clear input text fields and checkboxes
 document.getElementById("clearbutton").onclick = function(){
     console.log("clearbtnpressed");
@@ -36,6 +37,7 @@ document.getElementById("clearbutton").onclick = function(){
     sixtykchbx.checked=false;
     occhbx.checked=false;
     spchbx.checked=false;
+    ocochbx.checked=false;
 }
 //keyboard shorcuts for insert and copy
 document.addEventListener('keydown', function(e) { 
@@ -86,17 +88,29 @@ document.getElementById("midyearcheckbox").onclick=function(){
 if (midchbx.checked==true){
     sixtykchbx.checked=false;
     occhbx.checked = false;
+    ocochbx.checked = false;
+
     
 }}
 document.getElementById("60kcheckbox").onclick=function(){
     if (sixtykchbx.checked==true){
         midchbx.checked = false;
         occhbx.checked = false;
+        ocochbx.checked = false;
+
 }}
 document.getElementById("oilchangecheckbox").onclick=function(){
         if (occhbx.checked==true){
             midchbx.checked = false;
             sixtykchbx.checked = false;
+            ocochbx.checked = false;
+}}
+document.getElementById("oco").onclick=function(){
+    if (ocochbx.checked==true){
+        midchbx.checked = false;
+        sixtykchbx.checked = false;
+        occhbx.checked = false;
+
 }}
 //checkbox auto-unchecks insert or blades
 document.getElementById("insertcheckbox").onclick=function(){
