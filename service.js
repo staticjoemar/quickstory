@@ -361,6 +361,14 @@ document.getElementById("psbtn").onclick=function(){
         if(lhbulbchbx.checked==true&&rhbulbchbx.checked==true){
             document.getElementById("storyFinal").value = "REPLACED BOTH BRAKE LIGHT BULBS\nCHECK OPERATION, OK";
         }}
+     //QC
+     document.getElementById("qcBtn").onclick=function(){
+        document.getElementById("storyFinal").value="PERFORM QC";
+     }
+     //KREX   
+     document.getElementById("krexBtn").onclick=function(){
+        document.getElementById("storyFinal").value="ADDED KREX";
+     }
 //spencer
 document.getElementById("spencerbutton").onclick = function(){
     whosUsing();
