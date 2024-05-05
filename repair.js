@@ -8,6 +8,13 @@ let fourtire = document.getElementById("4tire");
 let replacerotor = document.getElementById("replacerotorscheckbox");
 let lhcvchbx = document.getElementById("lhboot");
 let rhcvchbx = document.getElementById("rhboot");
+let tpms1 = document.getElementById("tpms1");
+let tpms2 = document.getElementById("tpms2");
+let tpms3 = document.getElementById("tpms3");
+let tpms4 = document.getElementById("tpms4");
+let tpms5 = document.getElementById("tpms5");
+
+
 //keyboard shortcuts
 document.addEventListener('keydown', function(e) { 
     if (e.key == "Control") {
@@ -146,6 +153,54 @@ document.getElementById("spencerbutton").onclick = function(){
             whosUsing();
             document.getElementById("storyFinal").value= "REMOVE P/S LINE\nFILL AND BLEED P/S SYSTEM\nCHECK FOR LEAKS, OK";
         }
+//Engine main
+        //Valve Cover(s)
+        document.getElementById("singleBank").onclick=function(){
+            document.getElementById("storyFinal").value="REPLACED VALVE COVER GASKET AND TUBE SEALS\nCLEAN MATING SURFACES\nTORQUED TO SPEC AND CHECK FOR LEAKS, OK"
+        }
+        document.getElementById("doubleBank").onclick=function(){
+            document.getElementById("storyFinal").value="REPLACED BOTH VALVE COVER GASKETS AND ALL TUBE SEALS\nCLEAN MATING SURFACES\nTORQUED TO SPEC AND CHECK FOR LEAKS, OK"
+
+        }
+//AC main
+        //EVAP
+        document.getElementById("evap").onclick=function(){
+            document.getElementById("storyFinal").value="REPLACE EVAPORATOR CORE\nCHARGE REFRIGERANT TO SPEC\nFILL AND BLEED COOLING SYSTEM\nTEST DRIVE, OK\nVERIFY AC BLOWING COLD"
+        }
+        document.getElementById("evapCondenser").onclick=function(){
+            document.getElementById("storyFinal").value="REPLACE EVAPORATOR CORE AND CONDENSER\nCHARGE REFRIGERANT TO SPEC\nFILL AND BLEED COOLING SYSTEM\nTEST DRIVE, OK\nVERIFY AC BLOWING COLD"
+
+        }
+//Electrical main
+        //TPMS
+        document.getElementById("rnrSensor").onclick=function(){
+            if(tpms1.checked==true){
+                document.getElementById("storyFinal").value="REPLACE ONE TPMS SENSOR\nSET TO 35 PSI\nREGISTER TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK\nTPMS LIGHT OFF.";
+            }
+            if(tpms2.checked==true){
+                document.getElementById("storyFinal").value="REPLACE TWO TPMS SENSORS\nSET TO 35 PSI\nREGISTER TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK\nTPMS LIGHT OFF.";
+            }
+            if(tpms3.checked==true){
+                document.getElementById("storyFinal").value="REPLACE THREE TPMS SENSORS\nSET TO 35 PSI\nREGISTER TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK\nTPMS LIGHT OFF.";
+
+            }
+            if(tpms4.checked==true){
+                document.getElementById("storyFinal").value="REPLACE FOUR TPMS SENSORS\nSET TO 35 PSI\nREGISTER TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK\nTPMS LIGHT OFF.";
+
+            }
+            if(tpms5.checked==true){
+                document.getElementById("storyFinal").value="REPLACE FIVE TPMS SENSORS\nSET TO 35 PSI\nREGISTER TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK\nTPMS LIGHT OFF.";
+
+            }
+        }
+        //Keys
+        document.getElementById("addKey").onclick=function(){
+            document.getElementById("storyFinal").value="REGISTERED NEW KEY TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK"
+        }
+        document.getElementById("reseedKey").onclick=function(){
+            document.getElementById("storyFinal").value="PERFORM RESEED PROCEDURE\nERASE ALL REGISTERED KEYS\nREGISTERED NEW KEY TO VEHICLE VIA TECHSTREAM\nCHECK OPERATION, OK"
+        }
+//transmission main
 //menu change color
 let hdrBtn1=document.getElementById("hdrBtn1");
 let hdrBtn2=document.getElementById("hdrBtn2");
@@ -297,7 +352,11 @@ let sSDiv2 = document.getElementById("sSDiv2");
 let sSDiv3 = document.getElementById("sSDiv3");  
 let sSDiv4 = document.getElementById("sSDiv4");  
 let sSDiv5 = document.getElementById("sSDiv5");  
-let sSDiv6 = document.getElementById("sSDiv6");      
+let sSDiv6 = document.getElementById("sSDiv6");
+let engDiv1 = document.getElementById("engDiv1");
+let acDiv1 = document.getElementById("acDiv1");
+let elecvDiv1 = document.getElementById("elecDiv1"); 
+let elecDiv2 = document.getElementById("elecDiv2");     
 //Menu Btns show Divs
     //BRAKES
         document.getElementById("brkDiv1Btn").onclick=function(){
@@ -382,8 +441,47 @@ let sSDiv6 = document.getElementById("sSDiv6");
                 sSDiv6.style.display="none";
             }}
     //ENGINES
+        document.getElementById("engDiv1Btn").onclick=function(){
+            whosUsing();
+            closeDivs();
+            if(engDiv1.style.display==="none"){
+                engDiv1.style.display="inline-block";
+            }
+            else if(engDiv1.style.display==="inline-block"){
+                engDiv1.style.display="none";
+            }}
     //AC
-    //ELECTRICAL    
+        document.getElementById("acDiv1Btn").onclick=function(){
+            whosUsing();
+            closeDivs();
+            if(acDiv1.style.display==="none"){
+                acDiv1.style.display="inline-block";
+            }
+            else if(acDiv1.style.display==="inline-block"){
+                acDiv1.style.display="none";
+            }}
+            
+    //ELECTRICAL   
+        document.getElementById("elecDiv1Btn").onclick=function(){
+            whosUsing();
+            closeDivs();
+            if(elecDiv1.style.display==="none"){
+                elecDiv1.style.display="inline-block";
+            }
+            else if(elecDiv1.style.display==="inline-block"){
+                elecDiv1.style.display="none";
+            }}
+
+         document.getElementById("elecDiv2Btn").onclick=function(){
+            whosUsing();
+            closeDivs();
+            if(elecDiv2.style.display==="none"){
+                elecDiv2.style.display="inline-block";
+            }
+            else if(elecDiv2.style.display==="inline-block"){
+                    elecDiv2.style.display="none";
+                }}
+
 function closeDivs(){
     sSDiv1.style.display="none";
     sSDiv2.style.display="none";
@@ -394,6 +492,11 @@ function closeDivs(){
     brkDiv1.style.display="none";
     brkDiv2.style.display="none";
     brkDiv3.style.display="none";
+    engDiv1.style.display="none";
+    acDiv1.style.display="none";
+    elecvDiv1.style.display="none";
+    elecDiv2.style.display="none";
+    
 }
 
 //menu change color

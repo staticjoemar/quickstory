@@ -90,7 +90,7 @@ if (localStorage.getItem("clockedOut")=="null"){
 
 //set total pd on refresh or tab change
 
-document.getElementById("totalpd").innerHTML="TECH "+currentUser+": "+init.toFixed(3);
+document.getElementById("totalpd").innerHTML="TECH "+currentUser+": "+init.toFixed(2);
 //
 document.getElementById("timeOutBtn").onclick=function(){
     //toggle button
@@ -132,13 +132,13 @@ function splitTime(){
     let a = (y - z)/1000;
     sec = a.toFixed(2);
     //convert to hours
-    hr = (a/3600).toFixed(3);
+    hr = (a/3600).toFixed(2);
     // save split time as new int
     localStorage.setItem("splitTime"+count, hr);
     //save new total 
     localStorage.setItem("init", init);
     //print
-   document.getElementById("day").textContent = hr;
+   document.getElementById("day").textContent ="HOURS: "+ hr;
    document.getElementById("sec").innerHTML = "SECONDS: " + sec;
 }
 //DEBUG
@@ -153,7 +153,7 @@ let x = +localStorage.getItem("init");
 let y = +localStorage.getItem("splitTime"+count);
  init = x+y;
 localStorage.setItem("init",init);
-document.getElementById("totalpd").innerHTML ="TECH "+currentUser+": "+ init.toFixed(3);
+document.getElementById("totalpd").innerHTML ="TECH "+currentUser+": "+ init.toFixed(2);
 }
 
 

@@ -1,0 +1,44 @@
+*/TO ADD LOGIN 
+-----------------
+    //ADD TO INDEX.HTML
+    <div style="text-align: center; vertical-align:middle;">
+            <p id="invalid" style="background-color: red;color: yellow;" hidden>INVALID LOGIN</p><br>
+        <label for="user">USER:</label><br>
+        <input type="text" name="user" id="userinput"><br><br>
+        <label for="pass">PASSWORD:</label><br>
+        <input type="password" name="pass" id="passinput"><br><br>
+        <button id="input">input</button>
+    </div>
+    //ADD TO INDEX.JS
+    document.getElementById("input").onclick = function(){
+        let password = document.getElementById("passinput");
+        let username = document.getElementById("userinput");
+        let pass = password.value;
+        let user = username.value;
+        if((pass=="188")&&(user=="188")){
+            window.location.href = "/service.html";
+            sessionStorage.setItem("goodlogin", "0");
+        }
+        else{
+            document.getElementById("invalid").removeAttribute("hidden");
+        }}
+    document.addEventListener('keypress', function(e) { 
+        if (e.keyCode === 13) {
+            document.getElementById("input").click();
+        }});  
+    //ADD TO ALL OTHER .JS
+    let auth = sessionStorage.getItem("goodlogin");
+    if((auth=="null")||(auth==null)){
+        window.location.href = "/index.html";
+    }
+/*
+-----------------
+*/TO ADD CONTENT
+-----------------
+1. create new div in main area in html ex. (brkDiv1)
+2. code write(); function in js. and other button/checkbox functions
+3. create new menuBtn ex. (brkDiv1Btn)
+4. declare .display="none" variables for divs (same name as step1)
+5. code open and close div function in js. (add to closeDivs();)
+/*
+-----------------

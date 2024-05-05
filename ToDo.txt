@@ -1,0 +1,29 @@
+*/MAIN 
+-----------
+- clean code:
+    - organize indents
+    - add notes
+    - rename vars
+- bug fix:
+    - timeclock refresh when switching tabs within quickstory
+- features
+    - multi-user support(timeclock)
+    - vehicle specs for services
+        -(by engine code?)
+    - add notes to timeclock punches
+    - improved ui for timeclock
+/*
+-----------
+*/STORIES
+-----------
+- new car feature
+    - running boards
+    - final coat
+    - trd
+    - roof racks
+- evaporator
+- suspension
+- elec p/s motor
+- blower motor
+/*
+-----------

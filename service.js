@@ -23,6 +23,7 @@ let bladechbx = document.getElementById("bladecheckbox");
 let lhbulbchbx = document.getElementById("lhbulb");
 let rhbulbchbx = document.getElementById("rhbulb");
 let ocochbx = document.getElementById("oco");
+let coolchbx = document.getElementById("wCool");
 //clear input text fields and checkboxes
 document.getElementById("clearbutton").onclick = function(){
     whosUsing();
@@ -69,6 +70,10 @@ document.getElementById("020btn").onclick = function(){
 document.getElementById("016btn").onclick = function(){
     whosUsing();
     document.getElementById("oiltypeinput").value = "0W16";
+}
+document.getElementById("08btn").onclick=function(){
+    whosUsing();
+    document.getElementById("oiltypeinput").value="0W8";
 }
 document.getElementById("a1btn").onclick = function(){
     whosUsing();
@@ -201,6 +206,9 @@ function oilChange(){
     }
     else if(spchbx.checked==true){
         document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nREPLACED ALL SPARK PLUGS. TORQUED TO SPEC\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
+    }
+    else if(coolchbx.checked==true){
+        document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nDRAIN AND REFILL COOLANT\nBLEED COOLING SYSTEM\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";
     }
     else{
     document.getElementById("storyFinal").value = "PERFORM 5K SERVICE PER FACTORY MENU\nPERFORM BATTERY CHECK,OK\nTOPPED OFF FLUIDS SET TIRES 35 PSI\nBRAKES FRONT@ " + frbr + "MM REAR@ " + rrbr + "MM\nTIRES FRONT@ " + trfr + "/32 REAR@ " + trrr + "/32 OK\n" + oilqt + "QT " + oiltype + " OIL FILTER " + filtertype + " ADDED KREX\nTORQUED LUG NUTS TO 80 FT LBS\nRESET MAINTENANCE LIGHT";

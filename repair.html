@@ -19,9 +19,9 @@
     
         <button class="headerBtn" id="hdrBtn1" style="background-color: black;"> BRAKES </button>
         <button class="headerBtn" id="hdrBtn2" style="background-color: black;">STEERING/SUSPENSION</button>
-        <button class="headerBtn" id="hdrBtn3" style="background-color: black;">ENGINE(INOP)</button>
-        <button class="headerBtn" id="hdrBtn4" style="background-color: black;">A/C(INOP)</button>
-        <button class="headerBtn" id="hdrBtn5" style="background-color: black;">ELECTRICAL(INOP)</button>
+        <button class="headerBtn" id="hdrBtn3" style="background-color: black;">ENGINE</button>
+        <button class="headerBtn" id="hdrBtn4" style="background-color: black;">A/C</button>
+        <button class="headerBtn" id="hdrBtn5" style="background-color: black;">ELECTRICAL</button>
         <button class="headerBtn" id="hdrBtn6" style="background-color: black;">TRANSMISSION(INOP)</button>
         <p class="pagedivider">.</p>
 
@@ -45,12 +45,16 @@
 </div>
 <!--engine-->
 <div id="menu3" hidden>
+    <button id="engDiv1Btn" class="titleBtn">VALVE COVER(S)</button>
 </div>
 <!--ac-->
 <div id="menu4" hidden>
+    <button class="titleBtn" id="acDiv1Btn">EVAPORATOR</button>
 </div>
 <!--electrical-->
 <div id="menu5" hidden>
+    <button id="elecDiv1Btn" class="titleBtn">TPMS</button>
+    <button class="titleBtn" id="elecDiv2Btn">KEY</button>
 </div>
 <!---transmission-->
 <div id="menu6" hidden>
@@ -149,8 +153,42 @@
                     <button class="button">REPLACE UJOINTS</button>
         </div>
     <!--engine-->
+        <!--valve cover-->
+        <div id="engDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">VALVE COVER(S)</p>
+                <button class="button" id="singleBank">4 CYL</button>
+                <button class="button" id="doubleBank">V6,V8</button>
+        </div>
     <!--ac-->
+        <!---evaporator-->
+        <div id="acDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">EVAPORATOR</p>
+                <button class="button" id="evap">REPLACE EVAP CORE</button>
+                <button class="button" id="evapCondenser">REPLACE EVAP & CONDENSER</button>
+
+        </div>
     <!--electrical-->
+        <!--TPMS-->
+        <div id="elecDiv1" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+        <p class="subdividertitle">TPMS</p>
+            <label class="label" for="tpms1">1:</label>
+            <input type="checkbox" name="tpms1" id="tpms1"><br>
+            <label class="label" for="tpms2">2:</label>
+            <input type="checkbox" name="tpms2" id="tpms2"><br>
+            <label class="label" for="tpms3">3:</label>
+            <input type="checkbox" name="tpms3" id="tpms3"><br>
+            <label class="label" for="tpms4">4:</label>
+            <input type="checkbox" name="tpms4" id="tpms4"><br>
+            <label class="label" for="tpms5">5:</label>
+            <input type="checkbox" name="tpms5" id="tpms5"><br><br>
+            <button class="button" id="rnrSensor">REPLACE SENSORS</button>
+        </div>
+        <!--KEY-->
+        <div id="elecDiv2" style="display: none;vertical-align: middle;padding: 1rem 1rem">
+            <p class="subdividertitle">KEYS</p>
+            <button id="addKey" class="button">ADD KEY</button>
+            <button id="reseedKey" class="button">RESEED</button>
+        </div>
     <!--child2-->
     <div class="child1">
         <div style="text-align: center;">
@@ -163,7 +201,7 @@
 </div>
 <!--main area end-->
     <p class="pagedivider">.</p>
-    <p style=" font-family: monospace;">notes:keyboard shortcuts  "space"" to insert, numpad "enter" to copy</p>
+    <p style=" font-family: monospace;">notes:keyboard shortcuts  "space"" to insert, left "ctrl" to copy</p>
     <button class="button" id="spencerbutton">button</button><br><img src="images/spencer.jpg" alt="" hidden id="spencerimg">
     <script src="repair.js"></script>
 </body>
