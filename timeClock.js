@@ -139,7 +139,7 @@ function splitTime(){
     localStorage.setItem("init", init);
     //print
    document.getElementById("day").textContent ="HOURS: "+ hr;
-   document.getElementById("sec").innerHTML = "SECONDS: " + sec;
+   printSplit();
 }
 //DEBUG
 document.getElementById("deletestorage").onclick=function(){
@@ -156,7 +156,19 @@ localStorage.setItem("init",init);
 document.getElementById("totalpd").innerHTML ="TECH "+currentUser+": "+ init.toFixed(2);
 }
 
+function printSplit(){
+    let min;
+    
 
+    if(sec<60){
+        document.getElementById("sec").innerHTML = "SECONDS: " + sec;
+    }
+    if(sec>60){
+        min = sec/60;
+        document.getElementById("sec").innerHTML ="MINUTES: " + min.toFixed(2);
+    }
+
+}
 
 
 
